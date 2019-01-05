@@ -3,11 +3,7 @@ The goal is to build the app that has a JSON API back-end and a React front end.
 The app will have at least 2 related models and all 4 CRUD operations for the whole project. 
 Between each model all CRUD operations will be present.
 
-# Ideas for the app (needs a consulting)
-![Idea 1](/printscreens/YogaPlace.jpeg)
-![Idea 2](/printscreens/ChatRoom.jpeg)
-![Idea 3](/printscreens/SurfGuide.jpeg)
-![Idea 4](/printscreens/SelfGymCoach.jpeg)
+![Idea 1](/printscreens/printscreen1.jpg)
 
 ## M.V.P
 - Navigation Bar contains Home, Maps, Login/Register, etc. 
@@ -15,12 +11,15 @@ Between each model all CRUD operations will be present.
 - a slideshow with pure understandable JavaScript code 
 - animations 
 
+![Idea 2](/printscreens/printscreen2.jpg)
+
 ## Post M.V.P features
 - contains language change option for the nav bar and the essentials, etc.
 - a printing option
-- payment options
+- a calendar with dates
 - a chat room
 - 360 degrees view
+- payment options
 
 ##                           Components Hierarchy:
 
@@ -30,7 +29,7 @@ Between each model all CRUD operations will be present.
 #### NavBar
 - NavBar.js
 
-#### Home page
+#### Main page
 - HomePage.js
 
 #### Login/Register
@@ -39,6 +38,8 @@ Between each model all CRUD operations will be present.
 - LoginForm.js
 - Profile.js
 
-#### Maps
+#### Maps/Reviews
 - access to Google Maps
 
+#### Classes
+- a table with classes
