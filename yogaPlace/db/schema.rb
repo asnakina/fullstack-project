@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_05_225503) do
+ActiveRecord::Schema.define(version: 2019_01_06_071723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,10 +24,21 @@ ActiveRecord::Schema.define(version: 2019_01_05_225503) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "locations_the_classes", id: false, force: :cascade do |t|
+    t.bigint "location_id", null: false
+    t.bigint "the_class_id", null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "the_class_id"
+    t.bigint "location_id"
+    t.bigint "user_id"
+    t.index ["location_id"], name: "index_reviews_on_location_id"
+    t.index ["the_class_id"], name: "index_reviews_on_the_class_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "the_classes", force: :cascade do |t|
@@ -38,6 +49,11 @@ ActiveRecord::Schema.define(version: 2019_01_05_225503) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "the_classes_users", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "the_class_id", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
@@ -46,4 +62,7 @@ ActiveRecord::Schema.define(version: 2019_01_05_225503) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "reviews", "locations"
+  add_foreign_key "reviews", "the_classes"
+  add_foreign_key "reviews", "users"
 end
