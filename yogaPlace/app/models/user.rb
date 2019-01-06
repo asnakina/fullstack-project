@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_many :reviews, dependent: :nullify
+  has_many :reviews
+  # , dependent: :nullify
   has_and_belongs_to_many :the_classes
   has_secure_password
   validates :email, presence: true
