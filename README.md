@@ -16,6 +16,8 @@ Between each model all CRUD operations will be present.
 ![Associations M.V.P.](/printscreens/printscreen2.jpg)
 
 ## Post M.V.P features
+- account_type: string. Setting "account_type" to "admin" or "teacher" or "student"
+we can change the view depending on what the account type is.
 - teachers table
 - img_url for the classes
 - contains language change option for the nav bar and the essentials, etc.
