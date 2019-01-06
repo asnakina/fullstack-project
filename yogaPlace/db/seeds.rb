@@ -7,8 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Review.destroy_all
-Review.create([
-  {
-    description: "fisrt comment"
-  }
-])
+Location.destroy_all
+TheClass.destroy_all
+User.destroy_all
+
+@user1 = User.create(username: 'one', password: '1', email: '1@gmail.com')
+@user2 = User.create(username: 'two', password: '2', email: '2@gmail.com')
+@location1 = Location.create(name: 'South', address: '1545 Collins Ave Miami Beach, FL, 33139', lat: 25.788251, lng: -80.129387)
+@location2 = Location.create(name: 'North', address: '3611 Collins Ave Miami Beach, FL, 33140', lat: 25.809993, lng: -80.123235)
+@class1 = @location1.the_classes.create(title:'hatha yoga', date: DateTime.parse('05/05/19'), description:'Hatha yoga is an old system, fast comlex yoga style. It includes the practice of asanas (yoga postures) and pranayama (breathing exercises), which help bring peace to the mind and body, preparing the body for deeper spiritual practices such as meditation.')
+@class2 = @location2.TheClass.create(title: 'kundalini', date: DateTime.parse('06/06/19'), description: 'Breathing, meditative and strong type of yoga. Be aware you might be addicted and love it forever.')
+
+# Review.destroy_all
+# Review.create([
+#   {
+#     description: "fisrt comment"
+#   }
+# ])
