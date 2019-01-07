@@ -56,7 +56,12 @@ class NavBar extends Component {
            <button onClick={() => this.setView('loginView')} className="navBtn">Login/Register</button>
          </div>
          <div className="content">
-           { content }
+           <header>
+              <h1>Yoga Place</h1>
+            </header>
+            <div>
+              { content }
+            </div>
          </div>
       </div>
     )
