@@ -10,15 +10,33 @@
 
 .navBarContent {
   display: flex;
+  justify-content: space-around;
+  align-content: space-around;
   /* justify-content: space-between; */
   /* align-items: center; */
+}
+
+.navBar{
+  width: 15vw;
+  height: 100vh;
+  background-color: black;
+  align-items: center;
+  justify-content: space-around;
+  /* text-align: center; */
+}
+
+.content {
+  width: 85vw;
+  height: 90vh;
+  text-align: center;
+  align-items: center;
 }
 
 header {
   height: 10vh;
   text-align: center;
   align-items: center;
-  animation: breathing 6s ease-in-out infinite;
+  animation: breathing 5s ease-in-out infinite;
   font-size: 30px;
 }
 
@@ -37,18 +55,6 @@ header {
 .headerContent {
   display: flex;
   flex-direction: column;
-}
-
-.navBar{
-  width: 15vw;
-  color: white;
-}
-
-.content {
-  width: 85vw;
-  height: 90vh;
-  text-align: center;
-  align-items: center;
 }
 
 .mainClass {
