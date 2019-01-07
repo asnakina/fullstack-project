@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-async function getMyReviews() {
+async function getMyClasses() {
   console.log('Fetching reviews');
   const response = await axios({
-    url: '/api/posts/mine',
+    url: '/api/classes/mine',
     header: {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     }
@@ -13,5 +13,5 @@ async function getMyReviews() {
  }
 
  export {
-   getMyPosts
+   getMyClasses
  }
