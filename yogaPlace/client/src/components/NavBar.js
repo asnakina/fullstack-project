@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 function NavBar(props) {
-return (
-   <ul className="navBar">
+  return (
+    <ul className="navBar">
+      <li id="imgLi">
+        <img src={ require('../images/logo.png') } alt={'main'} />
+      </li>
       <li>
         <Link to='/'>Main</Link>
       </li>
@@ -20,6 +24,9 @@ return (
       </li>
       <li>
         <Link to='/profile'>Profile</Link>
+      </li>
+      <li id="gifLi">
+       <img src={ require('../images/pose4.gif') } alt={'main'} />
       </li>
     </ul>
   );
