@@ -64,8 +64,8 @@ class App extends Component {
             <div className="content">
               <Route exact path="/" component={MainView} />
               <Route exact path="/about" component={AboutView} />
-              {/*<Route path="/auth" component={AuthForms} />
-              <Route path="/profile" component={Profile} />*/}
+              <Route path="/auth" component={AuthForms} />
+              <Route path="/profile" component={Profile} />
             </div>
           </div>
          </div>
