@@ -8,14 +8,14 @@ function LoginForm(props) {
         <input onChange={props.handleChange}
                name="email"
                value={props.login.email} />
-        <br><br>
+        <br></br>
         <h3>Password:</h3>
         <input onChange={props.handleChange}
                name="password"
                value={props.login.password} />
-        <br><br>
+        <br></br>
         <button type="submit">Login</button>
-    <form>
+    </form>
   )
 }
 

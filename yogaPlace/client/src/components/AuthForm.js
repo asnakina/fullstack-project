@@ -1,4 +1,5 @@
-import React, { Component } forom 'react';
+import React, { Component } from 'react';
+//we import login for...
 import { login } from '../services/auth';
 import { Redirect } from 'react-router-dom';
 import LoginForm from './LoginForm';
@@ -26,10 +27,13 @@ class AuthForm extends Component {
   }
 
   handleChange(e) {
+    //name is email or password
     const {name, value} = e.target
-    this.setState(precState => (
+    this.setState(prevState => (
       {
         credentials: {
+          //in a previous state of credentials add, spread operator makes shallow copy of the object (dynamic)
+          //go through my form and see name matches and change the value
           ...prevState.credentials,
           [name] : value
         }

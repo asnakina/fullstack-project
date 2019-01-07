@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import NavBar from './components/NavBar';
-// import AuthForms from './components/AuthForms';
-// import Profile from './components/Profile';
+import AuthForm from './components/AuthForm';
+import Profile from './components/Profile';
 import MainView from './components/MainView';
 import AboutView from './components/AboutView';
 
@@ -64,7 +64,7 @@ class App extends Component {
             <div className="content">
               <Route exact path="/" component={MainView} />
               <Route exact path="/about" component={AboutView} />
-              <Route path="/auth" component={AuthForms} />
+              <Route path="/auth" component={AuthForm} />
               <Route path="/profile" component={Profile} />
             </div>
           </div>
