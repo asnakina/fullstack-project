@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import axios from 'axios';
-// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import AuthForms from './components/AuthForms';
-import Profile from './components/Profile';
-import Main from './components/Main';
+// import AuthForms from './components/AuthForms';
+// import Profile from './components/Profile';
+import MainView from './components/MainView';
+import AboutView from './components/AboutView';
 
 class App extends Component {
   constructor() {
@@ -52,12 +52,24 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
-           <NavBar />
-           <Route exact path="/" component={Home} />
-           <Route path="/auth" component={AuthForms} />
-           <Route path="/profile" component={Profile} />
-        </div>
+       <div className="App">
+         <div className="navBarContent">
+           <div className="navBar">
+             <NavBar />
+           </div>
+         <div className="headerContent">
+            <header>
+              <h1>Yoga Place</h1>
+            </header>
+            <div className="content">
+              <Route exact path="/" component={MainView} />
+              <Route exact path="/about" component={AboutView} />
+              {/*<Route path="/auth" component={AuthForms} />
+              <Route path="/profile" component={Profile} />*/}
+            </div>
+          </div>
+         </div>
+       </div>
       </Router>
     );
   }

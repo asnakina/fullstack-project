@@ -4,7 +4,7 @@ function AboutView(props) {
   return (
     <div>
       <h2>About us:</h2>
-    <div>
+    </div>
   )
 }
 

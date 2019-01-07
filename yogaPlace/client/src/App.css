@@ -1,7 +1,75 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
 .navBarContent {
   display: flex;
+  /* justify-content: space-between; */
+  /* align-items: center; */
 }
+
+header {
+  height: 10vh;
+  text-align: center;
+  align-items: center;
+  animation: breathing 6s ease-in-out infinite;
+  font-size: 30px;
+}
+
+ @keyframes breathing {
+  0% {
+    text-shadow: 3px 2px white;
+  }
+  40% {
+    text-shadow: 3px 2px black;
+  }
+  100% {
+    text-shadow: 3px 2px white;
+  }
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.navBar{
+  width: 15vw;
+  color: white;
+}
+
+.content {
+  width: 85vw;
+  height: 90vh;
+  text-align: center;
+  align-items: center;
+}
+
+.mainClass {
+  background-image: url("./images/mainTropical.jpg");
+  background-size: cover;
+  height: 85vh;
+  text-align: center;
+}
+
+.mainClass > h2 {
+  color: white;
+  text-align: center;
+  align-self: center;
+}
+
+/* .mainClass > img {
+  width: 80vw;
+  position: relative;
+}
+
+.mainClass > h2 {
+  z-index: 10;
+  position: absolute;
+} */
