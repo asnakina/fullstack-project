@@ -19,7 +19,10 @@ class App extends Component {
         email: '',
         password: '',
         password_confirmation: ''
-      }
+      },
+      isLoggedIn: false
+      this.getReviews = this.getReviews.bind(this);
+      this.getClasses = this.getClasses.bind(this);
     }
   }
 
@@ -49,6 +52,24 @@ class App extends Component {
     ))
   }
 
+  async getReviews() {
+    try {
+      const reviews = await services.getReviews();
+      await this.setState({reviews});
+    } catch(e) {
+      console.error(e);
+    }
+  }
+
+  async getClasses() {
+    try {
+      const classes = await services.getClasses();
+      await this.setState({classes});
+    } catch(e) {
+      console.error(e);
+    }
+  }
+
   render() {
     return (
       <Router>
@@ -62,10 +83,15 @@ class App extends Component {
               <h1>Yoga Place</h1>
             </header>
             <div className="content">
+            {/*making fake routes:*/}
               <Route exact path="/" component={MainView} />
               <Route exact path="/about" component={AboutView} />
-              <Route path="/auth" component={AuthForm} />
-              <Route path="/profile" component={Profile} />
+              {this.state.isLoggedIn
+                ?
+                <Route path="/profile" component={Profile} />
+                :
+                <Route path="/auth" component={AuthForm} />
+              }
             </div>
           </div>
          </div>

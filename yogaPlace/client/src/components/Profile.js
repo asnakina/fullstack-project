@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { getMyReviews } from '../services/reviews';
-import { getMyClasses } from '../services/classes'; 
+import { getMyClasses } from '../services/classes';
 
 class Profile extends Component {
   constructor(props) {
@@ -26,14 +26,14 @@ class Profile extends Component {
   }
 
   logOut(e) {
-    localStorage.removeItem('token');
+    localStorage.removeItem('jwt');
     this.setState({
       redirectAuth: true
     });
   }
 
   render() {
-    if(this.state.redirectToAuth || !localStorage.getItem('token')) {
+    if(this.state.redirectToAuth || !localStorage.getItem('jwt')) {
       return (<Redirect to="/auth" />)
     }
     return (

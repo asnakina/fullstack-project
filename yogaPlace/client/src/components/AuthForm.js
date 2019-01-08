@@ -22,7 +22,7 @@ class AuthForm extends Component {
     e.preventDefault();
     const tokenData = await login(this.state.credentials)
     console.log(tokenData);
-    localStorage.setItem('token', tokenData.jwt);
+    localStorage.setItem('jwt', tokenData.jwt);
     this.setState({ redirectToProfile: true });
   }
 
@@ -46,12 +46,11 @@ class AuthForm extends Component {
     return (
       <div>
        <LoginForm handleChange={this.handleChange}
-        handleLogin = {this.handleLogin}
-        login={this.state.credentials} />
+                  handleLogin = {this.handleLogin}
+                  login={this.state.credentials} />
       </div>
     )
   }
-
 }
 
 export default AuthForm;

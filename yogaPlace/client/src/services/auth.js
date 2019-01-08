@@ -10,5 +10,5 @@ async function login(credentials) {
 }
 
 export {
-  login,
+  login
 }
