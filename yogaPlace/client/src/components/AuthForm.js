@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//we import login for...
+//we import login for ...
 import { login } from '../services/auth';
 import { Redirect } from 'react-router-dom';
 import LoginForm from './LoginForm';

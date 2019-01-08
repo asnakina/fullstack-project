@@ -21,9 +21,9 @@ class App extends Component {
         password_confirmation: ''
       },
       isLoggedIn: false
-      this.getReviews = this.getReviews.bind(this);
-      this.getClasses = this.getClasses.bind(this);
     }
+      // this.getReviews = this.getReviews.bind(this);
+      // this.getClasses = this.getClasses.bind(this);
   }
 
   handleChange(e) {
@@ -52,23 +52,23 @@ class App extends Component {
     ))
   }
 
-  async getReviews() {
-    try {
-      const reviews = await services.getReviews();
-      await this.setState({reviews});
-    } catch(e) {
-      console.error(e);
-    }
-  }
-
-  async getClasses() {
-    try {
-      const classes = await services.getClasses();
-      await this.setState({classes});
-    } catch(e) {
-      console.error(e);
-    }
-  }
+  // async getReviews() {
+  //   try {
+  //     const reviews = await services.getReviews();
+  //     await this.setState({reviews});
+  //   } catch(e) {
+  //     console.error(e);
+  //   }
+  // }
+  //
+  // async getClasses() {
+  //   try {
+  //     const classes = await services.getClasses();
+  //     await this.setState({classes});
+  //   } catch(e) {
+  //     console.error(e);
+  //   }
+  // }
 
   render() {
     return (

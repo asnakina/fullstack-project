@@ -3,7 +3,7 @@ import axios from 'axios';
 async function getMyReviews() {
   console.log('Fetching reviews');
   const response = await axios({
-    url: '/api/reviews/mine',
+    url: '/reviews/mine',
     header: {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     }

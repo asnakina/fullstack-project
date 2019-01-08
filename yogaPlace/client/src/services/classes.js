@@ -3,7 +3,7 @@ import axios from 'axios';
 async function getMyClasses() {
   console.log('Fetching reviews');
   const response = await axios({
-    url: '/api/classes/mine',
+    url: '/classes/mine',
     header: {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     }
