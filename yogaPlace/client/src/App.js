@@ -6,6 +6,7 @@ import AuthForm from './components/AuthForm';
 import Profile from './components/Profile';
 import MainView from './components/MainView';
 import AboutView from './components/AboutView';
+import LocationsView from './components/LocationsView';
 
 class App extends Component {
   constructor() {
@@ -86,6 +87,7 @@ class App extends Component {
             {/*making fake routes:*/}
               <Route exact path="/" component={MainView} />
               <Route exact path="/about" component={AboutView} />
+              <Route exact path="/locations" component={LocationsView} />
               {this.state.isLoggedIn
                 ?
                 <Route path="/profile" component={Profile} />
