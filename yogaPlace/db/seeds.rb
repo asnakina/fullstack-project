@@ -18,8 +18,10 @@ User.destroy_all
 @class1 = @location1.the_classes.create(title:'hatha yoga', date: DateTime.parse('05/05/19'), description:'Hatha yoga is an old system, fast comlex yoga style. It includes the practice of asanas (yoga postures) and pranayama (breathing exercises), which help bring peace to the mind and body, preparing the body for deeper spiritual practices such as meditation.')
 # @class2 = @location2.TheClass.create(title: 'kundalini', date: DateTime.parse('06/06/19'), description: 'Breathing, meditative and strong type of yoga. Be aware you might be addicted and love it forever.')
 @class2 = @location2.the_classes.create(title: 'kundalini', date: DateTime.parse('06/06/19'), description: 'Breathing, meditative and strong type of yoga. Be aware you might be addicted and love it forever.')
-@review1 = @location1.reviews.create(description: 'This is a nice location, lovely rooms.', user_id: @user1.id)
-@review2 = @class1.reviews.create(description: 'This class was very effective', user_id: @user2.id)
+@review1 = @location1.reviews.create(description: 'This is South location is nice, lovely rooms.', user_id: @user1.id)
+@review2 = @location2.reviews.create(description: 'Lovely atmosphere in North location', user_id: @user2.id)
+@review3 = @class1.reviews.create(description: 'This class was very effective', user_id: @user2.id)
+@review4 = @location1.reviews.create(description: 'South location is next to the ocean. Wow!', user_id: @user2.id)
 
 # Review.destroy_all
 # Review.create([

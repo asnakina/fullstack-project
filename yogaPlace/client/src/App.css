@@ -7,7 +7,7 @@
 .App {
   text-align: center;
 }
-
+                           /* NavBar: */
 .navBarContent {
   display: flex;
   justify-content: space-around;
@@ -63,6 +63,7 @@
 .navBar > li#gifLi {
   flex: 3;
 }
+                             /* Main: */
 
 .content {
   width: 85vw;
@@ -119,3 +120,13 @@ header {
   z-index: 10;
   position: absolute;
 } */
+
+                         /* Locations: */
+.AllLocations {
+  display: flex;
+  justify-content: space-around;
+}
+
+h2 {
+  color: green;
+}

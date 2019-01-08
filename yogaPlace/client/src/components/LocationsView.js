@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {getAllLocations} from '../services/locations';
 import {getAllReviews} from '../services/reviews';
 import ReviewsView from './Reviews/ReviewsView';
+import '../App.css';
 
 
 export default class LocationsView extends Component {
@@ -49,16 +50,20 @@ export default class LocationsView extends Component {
      return (
        <div>
           <h2>Locations:</h2>
-          {this.state.locations.map(theLocation => (
-            <div key={theLocation.id}>
-               <h3>{theLocation.name}</h3>
-               <h3>{theLocation.address}</h3>
-               <h3>{theLocation.lat}{theLocation.lng}</h3>
-               {/*{this.state.reviews.filter(review => theLocation.id === review['location_id'])}*/}
-               <ReviewsView reviews={this.state.reviews}/>
-            </div>
-        ))}
+            <div className="AllLocations">
+              {this.state.locations.map(theLocation => (
+                 <div key={theLocation.id}>
+                   <h3>{theLocation.name}</h3>
+                   <h3>{theLocation.address}</h3>
+                   <h3>{theLocation.lat}{theLocation.lng}</h3>
+                   <br></br>
+                   <ReviewsView reviews={this.state.reviews.filter(review => theLocation.id === review['location_id'])}/>
+                </div>
+               )
+             )
+           }
+        </div>
       </div>
-      )
+    )
   }
 }

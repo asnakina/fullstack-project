@@ -11,6 +11,7 @@ export default class ReviewsView extends Component {
        <div>
           <h2>Reviews:</h2>
           <ReviewsRender reviews={this.props.reviews} />
+          {/*<ReviewsForm />*/}
        </div>
      )
    }
