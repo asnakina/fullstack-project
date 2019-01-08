@@ -3,10 +3,10 @@ import axios from 'axios';
 async function getAllReviews() {
   console.log('Fetching All reviews');
   const response = await axios({
-    url: '/reviews',
-    header: {
-      'Authorization': `Bearer ${localStorage.getItem('token')}`
-    }
+    url: '/reviews'
+    // header: {
+    //   'Authorization': `Bearer ${localStorage.getItem('token')}`
+    // }
   });
   console.log(response)
   return response.data;
@@ -24,20 +24,50 @@ async function getAllReviews() {
    return response.data;
   }
 
-//async function createReview(token, formData) {
-  async function createReview(formData) {
+ async function createReview(token, formData) {
     try {
-    const review = await axios.post('/reviews/',
-    { "review": formData }
+      const review = await axios.post('/reviews/', formData, {
+        headers: {
+              'Authorization': `Bearer ${token}`
+            }
+      });
+    return review;
+  } catch(e) {
+    console.log(e)
+  }
+}
+
+ async function updateReview(token, id, formData) {
+   try {
+     const review = await axios.update('/reviews/${id}', formData, {
+     headers: {
+           'Authorization': `Bearer ${token}`
+         }
+       }
     )
     return review;
-     } catch(e) {
-        console.log(e)
+  } catch(e) {
+    console.log(e)
    }
+ }
+
+ async function deleteReview(token, id) {
+   try {
+     const review = await axios.delete('/reviews/${id}', {
+     headers: {
+           'Authorization': `Bearer ${token}`
+         }
+    });
+    return review;
+   } catch(e) {
+    console.log(e)
   }
+ }
 
  export {
    getAllReviews,
    getMyReviews,
-   createReview
+   createReview,
+   updateReview,
+   deleteReview
 }

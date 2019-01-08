@@ -9,7 +9,7 @@ function ReviewForm(props) {
               value={props.reviewFormData.description}
        />
        <br></br>
-       <button type="submit">Submit</button>
+       <button type="submit" className="submitBtnStyle">Submit</button>
     </form>
   )
 }

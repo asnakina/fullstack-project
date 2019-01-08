@@ -36,6 +36,7 @@
   font-size: 25px;
   font-weight: 400;
   text-align: center;
+  /* display: block; */
 }
 
 .navBar > li > a {
@@ -134,3 +135,32 @@ h2 {
 .ReviewsRendering {
   text-decoration-style: wavy;
 }
+
+.SubmitForms {
+  display: flex;
+  justify-content: space-around;
+}
+
+                       /* Form: */
+.submitBtnStyle {
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+  color: green;
+  opacuty: 0.7;
+  border: solid 1px black;
+  margin-top: 20px;
+  border-opacity: 0.7;
+  border-radius: 20px;
+}
+/* .newFormStyle {
+  width: 200px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-size: 20px;
+  border-radius: 12px;
+  margin-top: 10px;
+  font-size: 25px;
+} */
