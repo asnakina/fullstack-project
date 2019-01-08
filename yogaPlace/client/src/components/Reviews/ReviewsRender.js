@@ -1,11 +1,12 @@
 import React from 'react';
 
+
 function ReviewsRender(props) {
   return (
-      <div className="ReviewsView">
+      <div>
        {props.reviews.map(eachReview => (
          <div key={eachReview.id}>
-           <h3>{eachReview.description}</h3>
+           <h3 className="ReviewsRendering">{eachReview.description}</h3>
            {/*handleChange={props.onChange}*/}
            </div>
          ))}

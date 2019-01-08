@@ -130,3 +130,7 @@ header {
 h2 {
   color: green;
 }
+
+.ReviewsRendering {
+  text-decoration-style: wavy;
+}
