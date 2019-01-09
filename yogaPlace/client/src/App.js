@@ -63,6 +63,7 @@ class App extends Component {
          <div className="headerContent">
             <header>
               <h1>Yoga Place</h1>
+              {/*<img className="animation" src={require('./images/animation1.jpg')} alt={'main'} />*/}
             </header>
             <div className="content">
             {/*making fake routes:*/}

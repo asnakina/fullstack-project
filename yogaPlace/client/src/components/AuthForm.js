@@ -22,7 +22,7 @@ class AuthForm extends Component {
     e.preventDefault();
     const tokenData = await login(this.state.credentials)
     console.log(tokenData);
-    localStorage.setItem('jwt', tokenData.jwt);
+    localStorage.setItem('token', tokenData.jwt);
     this.setState({ redirectToProfile: true });
   }
 

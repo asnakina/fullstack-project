@@ -174,3 +174,40 @@ h2 {
   margin-top: 10px;
   font-size: 25px;
 } */
+
+                    /* Animation for Main page */
+/* .animation {
+ position: absolute;
+ right: 100px;
+ margin-top: 20px;
+ animation: appering 4s;
+}
+
+@keyframes appering {
+ 0%{
+   right: -250px;
+   transform: skew(0);
+ }
+ 10% {
+   right: 100px;
+   transform: skew(0);
+ }
+ 20% {
+   transform: skew(20deg);
+ }
+ 30% {
+   transform: skew(-20deg);
+ }
+ 40%{
+   transform: skew(0);
+ }
+ 50% {
+   top: 20px;
+ }
+ 60% {
+   bottom: 20px;
+ }
+ 70% {
+   rotate: 180%;
+ }
+} */

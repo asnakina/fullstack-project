@@ -14,9 +14,8 @@ export default class LocationsView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    reviewFormData: {
-      description: '' },
-      redirectToProfile: false,
+    review: '',
+    redirectToProfile: false,
     locations: [],
     reviews: []
     // selectedArea: ''
@@ -63,23 +62,15 @@ export default class LocationsView extends Component {
   handleChange(e) {
     //name is description in this case
     const {name, value} = e.target
-    this.setState(prevState => (
-      {
-        reviewFormData: {
-          //in a previous state of credentials add, spread operator makes shallow copy of the object (dynamic)
-          //go through my form and see name matches and change the value
-          ...prevState.reviewFormData,
-          [name] : value
-        }
-      }
-    ))
+    this.setState({review: value});
   }
 
   async handleSubmit(e) {
     e.preventDefault();
+    console.log(this.state.review);
     const token = localStorage.getItem('token');
-    if(this.state.reviewFormData.description) {
-      const review = await createReview(token, this.state.reviewFormData);
+    if(this.state.review) {
+      const review = await createReview(token, {description: this.state.review, user_id: 1, location_id: 1});
     }
     // this.setState (
     //   {
@@ -154,8 +145,8 @@ export default class LocationsView extends Component {
            }
         </div>
           <div className="SubmitForms">
-            <ReviewForm onChange={this.handleChange} onSubmit={this.handleSubmit} reviewFormData={this.state.reviewFormData.description} />
-            <ReviewForm onChange={this.handleChange} onSubmit={this.handleSubmit} reviewFormData={this.state.reviewFormData.description} />
+            <ReviewForm onChange={this.handleChange} onSubmit={this.handleSubmit} reviewFormData={this.state.review} />
+            <ReviewForm onChange={this.handleChange} onSubmit={this.handleSubmit} reviewFormData={this.state.review} />
           </div>
         </div>
      )

@@ -26,11 +26,13 @@ async function getAllReviews() {
 
  async function createReview(token, formData) {
     try {
-      const review = await axios.post('/reviews/', formData, {
+      console.log(localStorage.getItem('token'));
+      const review = await axios.post('/reviews', formData, {
         headers: {
-              'Authorization': `Bearer ${token}`
+              'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
-      });
+      }
+    );
     return review;
   } catch(e) {
     console.log(e)
