@@ -68,7 +68,8 @@ we can change the view depending on what the account type is.
 - open 2 terminal windows with Ctrl+T
 - in 1st one you will run your server side with: 1) cd yogaPlace 2) npm i 3) run rails db:drop db:create db:migrate db:seed 4) rails s -p 3001
 - on 2nd one you will run your client side with: 1) cd yogaPlace 2) cd client 3) npm i 4) npm run start
-Don't forget to run server first and after that the client.
-#Enjoy the app!
+
+##Don't forget to run server first and after that the client.
+##Enjoy the app!
 
 
