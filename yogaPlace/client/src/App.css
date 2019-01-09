@@ -122,7 +122,17 @@ header {
   position: absolute;
 } */
 
-                         /* Locations: */
+                               /* About: */
+.AboutText {
+  width: 80vw;
+  height: 20vh;
+}
+
+.AboutText > p {
+  font-size: 22px;
+}
+
+                              /* Locations: */
 .AllLocations {
   display: flex;
   justify-content: space-around;
@@ -143,9 +153,9 @@ h2 {
 
                        /* Form: */
 .submitBtnStyle {
-  width: 100px;
-  height: 50px;
-  font-size: 20px;
+  width: 8vw;
+  height: 4vh;
+  font-size: 2.5vh;
   color: green;
   opacuty: 0.7;
   border: solid 1px black;

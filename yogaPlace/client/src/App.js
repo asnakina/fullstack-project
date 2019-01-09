@@ -7,6 +7,7 @@ import Profile from './components/Profile';
 import MainView from './components/MainView';
 import AboutView from './components/AboutView';
 import LocationsView from './components/LocationsView';
+//import ClassesView from './components/Classes/ClassesView';
 
 class App extends Component {
   constructor() {
@@ -23,23 +24,21 @@ class App extends Component {
       },
       isLoggedIn: false
     }
-      // this.getReviews = this.getReviews.bind(this);
-      // this.getClasses = this.getClasses.bind(this);
   }
 
-  handleChange(e) {
-// why do we write like this?
-// can we substitute prevState with another code?
-    const {name, value} = e.target
-    this.setState(prevState => (
-      {
-        login: {
-          ...prevState.login,
-          [name] : value
-        }
-      }
-    ))
-  }
+//   handleChange(e) {
+// // why do we write like this?
+// // can we substitute prevState with another code?
+//     const {name, value} = e.target
+//     this.setState(prevState => (
+//       {
+//         login: {
+//           ...prevState.login,
+//           [name] : value
+//         }
+//       }
+//     ))
+//   }
 
   handleRegisterChange(e) {
     const {name, value} = e.target
@@ -52,24 +51,6 @@ class App extends Component {
       }
     ))
   }
-
-  // async getReviews() {
-  //   try {
-  //     const reviews = await services.getReviews();
-  //     await this.setState({reviews});
-  //   } catch(e) {
-  //     console.error(e);
-  //   }
-  // }
-  //
-  // async getClasses() {
-  //   try {
-  //     const classes = await services.getClasses();
-  //     await this.setState({classes});
-  //   } catch(e) {
-  //     console.error(e);
-  //   }
-  // }
 
   render() {
     return (
@@ -88,6 +69,7 @@ class App extends Component {
               <Route exact path="/" component={MainView} />
               <Route exact path="/about" component={AboutView} />
               <Route exact path="/locations" component={LocationsView} />
+              {/*<Route exact path="/the_classes" component={ClassesView} />*/}
               {this.state.isLoggedIn
                 ?
                 <Route path="/profile" component={Profile} />

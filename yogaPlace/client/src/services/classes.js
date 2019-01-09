@@ -3,10 +3,10 @@ import axios from 'axios';
 async function getAllClasses() {
   console.log('Fetching all classes');
   const response = await axios({
-    url: '/classes',
-    header: {
-      'Authorization': `Bearer ${localStorage.getItem('token')}`
-    }
+    url: '/the_classes'
+    // header: {
+    //   'Authorization': `Bearer ${localStorage.getItem('token')}`
+    // }
   });
   console.log(response)
   return response.data;
@@ -15,7 +15,7 @@ async function getAllClasses() {
 async function getMyClasses() {
   console.log('Fetching my classes');
   const response = await axios({
-    url: '/classes/mine',
+    url: '/the_classes/mine',
     header: {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     }
@@ -24,7 +24,21 @@ async function getMyClasses() {
   return response.data;
  }
 
+ async function deleteMyClasses(token, id) {
+   try {
+     const review = await axios.delete('/the_classes/${id}/mine', {
+     headers: {
+           'Authorization': `Bearer ${token}`
+         }
+    });
+    return review;
+   } catch(e) {
+    console.log(e)
+  }
+ }
+
  export {
    getAllClasses,
-   getMyClasses
+   getMyClasses,
+   deleteMyClasses
  }

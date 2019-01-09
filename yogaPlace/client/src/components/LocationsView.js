@@ -46,6 +46,7 @@ export default class LocationsView extends Component {
   async getReviews() {
     try {
       const reviews = await getAllReviews();
+    //const reviews = await services.getAllReviews();
       await this.setState({reviews});
     } catch(e) {
       console.error(e);
@@ -158,5 +159,5 @@ export default class LocationsView extends Component {
           </div>
         </div>
      )
-  }
+   }
 }
