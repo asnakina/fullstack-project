@@ -24,6 +24,8 @@ export default class LocationsView extends Component {
     this.getLocations = this.getLocations.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
     // this.createReview = this.createReview.bind(this);
   }
 
@@ -65,45 +67,22 @@ export default class LocationsView extends Component {
     this.setState({review: value});
   }
 
-  async handleSubmit(e) {
-    e.preventDefault();
+  async handleSubmit(location_id) {
     console.log(this.state.review);
     const token = localStorage.getItem('token');
     if(this.state.review) {
-      const review = await createReview(token, {description: this.state.review, user_id: 1, location_id: 1});
+      const review = await createReview(token, {description: this.state.review, location_id });
     }
-    // this.setState (
-    //   {
-    //     redirectToProfile: true
-    //   }
-    // );
-    // await this.addReview(this.state.reviewFormData.description);
-  }
-
-  // async addReview() {
-  //   const token = localStorage.getItem('token');
-  //   console.log(token)
-  //   const resp = await axios.post(`/reviews/`,
-  //       {reviewFormData: this.state.reviewFormData.description},
-  //     {headers: {
-  //       Authorization: `Bearer ${token}`
-  //     }
-  //   })
-  //   const comment = resp.data
-  //   this.setState(prevState => {
-  //     return {
-  //       comments: [...prevState.comments, comment],
-  //       reviewFormData: {
-  //         description: ''
-  //       }
-  //     }
-  //   })
-  // }
+      this.getReviews();
+      this.setState({
+        review: ''
+      });
+    }
 
 //Delete
-  async handleDelete(e) {
+  async handleDelete(reviewId) {
       const token = localStorage.getItem('token');
-      const review = await deleteReview(token, e.currentTarget.id);
+      const review = await deleteReview(token, reviewId);
       const reviews = await getAllReviews();
       this.setState(prevState => ({
         ...prevState.reviews,
@@ -112,10 +91,9 @@ export default class LocationsView extends Component {
   }
 
 //Update
-    async handleUpdate(e) {
-      e.preventDefault();
+    async handleUpdate(reviewId, reviewBody) {
         const token = localStorage.getItem('token');
-        const review = await updateReview(token, e.currentTarget.id);
+        const review = await updateReview(token, reviewId, { description: reviewBody });
         const reviews = await getAllReviews();
         this.setState(prevState => ({
           ...prevState.reviews,
@@ -138,17 +116,52 @@ export default class LocationsView extends Component {
                    <h3>{theLocation.address}</h3>
                    <h3>{theLocation.lat}{theLocation.lng}</h3>
                    <br></br>
-                   <ReviewsView reviews={this.state.reviews.filter(review => theLocation.id === review['location_id'])}/>
+                   <ReviewsView reviews={this.state.reviews.filter(review => theLocation.id === review['location_id'])}
+                                handleUpdate={this.handleUpdate}
+                                handleDelete={this.handleDelete}
+                                />
+
+                   <div className="SubmitForms">
+                     <ReviewForm onChange={this.handleChange}
+                                 onSubmit={this.handleSubmit}
+                                reviewFormData={this.state.review}
+                                location={theLocation}
+                       />
+                   </div>
                 </div>
                )
              )
            }
         </div>
-          <div className="SubmitForms">
-            <ReviewForm onChange={this.handleChange} onSubmit={this.handleSubmit} reviewFormData={this.state.review} />
-            <ReviewForm onChange={this.handleChange} onSubmit={this.handleSubmit} reviewFormData={this.state.review} />
-          </div>
+
         </div>
      )
    }
 }
+
+// this.setState (
+//   {
+//     redirectToProfile: true
+//   }
+// );
+// await this.addReview(this.state.reviewFormData.description);
+
+// async addReview() {
+//   const token = localStorage.getItem('token');
+//   console.log(token)
+//   const resp = await axios.post(`/reviews/`,
+//       {reviewFormData: this.state.reviewFormData.description},
+//     {headers: {
+//       Authorization: `Bearer ${token}`
+//     }
+//   })
+//   const comment = resp.data
+//   this.setState(prevState => {
+//     return {
+//       comments: [...prevState.comments, comment],
+//       reviewFormData: {
+//         description: ''
+//       }
+//     }
+//   })
+// }

@@ -41,7 +41,7 @@ async function getAllReviews() {
 
  async function updateReview(token, id, formData) {
    try {
-     const review = await axios.update('/reviews/${id}', formData, {
+     const review = await axios.put(`/reviews/${id}`, formData, {
      headers: {
            'Authorization': `Bearer ${token}`
          }
@@ -55,7 +55,7 @@ async function getAllReviews() {
 
  async function deleteReview(token, id) {
    try {
-     const review = await axios.delete('/reviews/${id}', {
+     const review = await axios.delete(`/reviews/${id}`, {
      headers: {
            'Authorization': `Bearer ${token}`
          }
