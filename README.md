@@ -5,6 +5,10 @@ Between each model all CRUD operations will be present.
 
 ![Main page](/printscreens/printscreen1.jpg)
 
+![Another page](/printscreens/printscreen2.jpg)
+
+![Different page](/printscreens/printscreen3.jpg)
+
 ## M.V.P
 - Navigation Bar contains Home, Maps, Login/Register, etc. 
 - Create all routs, associations, seed file, models file. 
@@ -13,9 +17,10 @@ Between each model all CRUD operations will be present.
 - animations 
 - excellent design
 
-![Associations M.V.P.](/printscreens/printscreen2.jpg)
+![Associations M.V.P.](/printscreens/printscreen4.jpg)
 
 ## Post M.V.P features
+- access to Google Maps
 - account_type: string. Setting "account_type" to "admin" or "teacher" or "student"
 we can change the view depending on what the account type is.
 - teachers table
@@ -27,18 +32,31 @@ we can change the view depending on what the account type is.
 - a chat room
 - payment options
 
-![Associations Post M.V.P.](/printscreens/printscreen3.jpg)
+![Associations Post M.V.P.](/printscreens/printscreen5.jpg)
 
 ##                           Components Hierarchy:
 
 #### 
 - App.js
+- App.css
 
 #### NavBar
 - NavBar.js
 
 #### Main page
-- HomePage.js
+- MainView.js
+
+#### About
+- About.js
+
+#### Locations/Reviews
+- LocationsView.js
+- ReviewsView.js
+- ReviewsRender.js
+- ReviewForm.js
+
+#### Classes/Reviews 
+- ClassesView.js with a table of classes and locations
 
 #### Login/Register/Account
 - AuthForms.js
@@ -46,8 +64,11 @@ we can change the view depending on what the account type is.
 - LoginForm.js
 - Profile.js
 
-#### Locations/Reviews
-- access to Google Maps
+##                           Instruction how to open the app :
+- open 2 terminal windows with Ctrl+T
+- in 1st one you will run your server side with: 1) cd yogaPlace 2) npm i 3) run rails db:drop db:create db:migrate db:seed 4) rails s -p 3001
+- on 2nd one you will run your client side with: 1) cd yogaPlace 2) cd client 3) npm i 4) npm run start
+Don't forget to run server first and after that the client.
+#Enjoy the app!
 
-#### Schedule/Reviews 
-- a table with classes
+
