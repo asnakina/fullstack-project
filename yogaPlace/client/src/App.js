@@ -7,6 +7,8 @@ import Profile from './components/Profile';
 import MainView from './components/MainView';
 import AboutView from './components/AboutView';
 import LocationsView from './components/LocationsView';
+import ExercisesView from './components/ExercisesView';
+import RetreatsView from './components/RetreatsView';
 //import ClassesView from './components/Classes/ClassesView';
 
 class App extends Component {
@@ -70,6 +72,8 @@ class App extends Component {
               <Route exact path="/" component={MainView} />
               <Route exact path="/about" component={AboutView} />
               <Route exact path="/locations" component={LocationsView} />
+              <Route exact path="/exercises" component={ExercisesView} />
+              <Route exact path="/retreats" component={RetreatsView} />
               {/*<Route exact path="/the_classes" component={ClassesView} />*/}
               {this.state.isLoggedIn
                 ?

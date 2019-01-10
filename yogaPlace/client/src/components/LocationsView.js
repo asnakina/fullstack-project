@@ -108,7 +108,7 @@ export default class LocationsView extends Component {
      )*/}
      return (
        <div className="locationsReviews">
-          <h2 className="locationsHeader">Locations:</h2>
+          <h2 className="mediumHeader">Locations:</h2>
             <div className="LocationsReviewsSubmit">
               {this.state.locations.map(theLocation => (
                  <div key={theLocation.id} className="LocationsRendering">

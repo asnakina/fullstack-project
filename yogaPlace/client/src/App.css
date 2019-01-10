@@ -10,6 +10,13 @@
 .App {
   text-align: center;
 }
+
+.mediumHeader {
+  color: white;
+  font-size: 7vh;
+  text-align: left;
+  text-shadow: 2px 2px #01a3a4;
+}
                            /* NavBar: */
 .navBarContent {
   display: flex;
@@ -193,13 +200,74 @@ header h1 {
 } */
 
                                /* About: */
-.AboutText {
-  width: 80vw;
-  height: 20vh;
+.aboutTextContent {
+  background-image: url("./images/mainTropical.jpg");
+  background-size: cover;
+  height: 90vh;
 }
 
-.AboutText > p {
+/* .AboutText {
+  width: 80vw;
+  height: 20vh;
+  background-color: white;
+  opacity: 0.9;
+} */
+
+.aboutText {
+  background-color: white;
+  opacity: 0.9;
+  padding: 10px 0;
+  font-weight: 400;
+  font-size: 3vh;
+  width: 70vw;
+  align-text: center;
+}
+
+.aboutText > ul {
+  list-style-type: circle;
+}
+
+.aboutText >ul > li {
   font-size: 22px;
+  margin-bottom: 10px;
+}
+
+                              /* Exercises: */
+.exercisesTextContent {
+  background-image: url("./images/mainTropical.jpg");
+  background-size: cover;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.gifs {
+  background-color: white;
+  height: 80vh;
+  width: 70vw;
+  position: center;
+  display: flex;
+  flex-wrap: wrap;
+  /* opacity: 0.8; */
+}
+
+.gifs > img {
+  z-index: 10;
+  width: 30vw;
+  height: 30vh;
+}
+
+                              /* Retreats: */
+.retreatsTextContent {
+  background-image: url("./images/mainTropical.jpg");
+  background-size: cover;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.retreatsTextContent > h3 {
+  color: white;
 }
 
                               /* Locations: */
@@ -210,21 +278,12 @@ header h1 {
 }
 
 .LocationsReviewsSubmit {
-  /* float: center; */
   display: flex;
   justify-content: space-around;
   background-color: white;
-  /* width: 70vw; */
   opacity: 0.9;
   padding: 10px 0;
   font-weight: 400;
-}
-
-.locationsHeader {
-  color: white;
-  font-size: 7vh;
-  text-align: left;
-  text-shadow: 2px 2px #01a3a4;
 }
 
 .ReviewsRendering {
@@ -240,6 +299,7 @@ header h1 {
   background-color: #01a3a4;
   width: 38vw;
   overflow: scroll;
+  font-size: 2.5vh;
 }
 
 .SubmitForms {
