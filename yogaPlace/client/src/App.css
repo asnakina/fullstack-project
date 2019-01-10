@@ -89,7 +89,7 @@ header {
   height: 12vh;
   text-align: center;
   font-family: 'Pacifico', cursive;
-  animation: breathingOne 5s ease-in-out infinites;
+  animation: breathingOne 5s ease-in-out infinite;
   /* animation-delay: 3s; */
   font-size: 30px;
   letter-spacing: .1em;
@@ -98,7 +98,7 @@ header {
 header h1 {
   margin-top: -2vh;
   color: #01a3a4;
-  animation: breathingOne 5s ease-in-out infinites;
+  animation: breathingOne 5s ease-in-out infinite;
 }
 
  @keyframes breathingOne {
@@ -135,6 +135,14 @@ header h1 {
   background-size: cover;
   height: 89vh;
   text-align: center;
+}
+
+.mainClass > ul {
+  list-style-type: none;
+}
+
+.mainClass > ul> li > a {
+  text-decoration: none;
 }
 
 .breathingLines {
@@ -216,15 +224,17 @@ header h1 {
 .aboutText {
   background-color: white;
   opacity: 0.9;
-  padding: 10px 0;
+  padding: 16px;
   font-weight: 400;
   font-size: 3vh;
   width: 70vw;
-  align-text: center;
+  margin: 0 auto;
 }
 
 .aboutText > ul {
   list-style-type: circle;
+  list-style-position: inside;
+  text-align: left;
 }
 
 .aboutText >ul > li {
@@ -248,13 +258,16 @@ header h1 {
   position: center;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
   /* opacity: 0.8; */
 }
 
 .gifs > img {
+  /* flex: 1; */
   z-index: 10;
-  width: 30vw;
-  height: 30vh;
+  width: 35vw;
+  height: 35vh;
 }
 
                               /* Retreats: */
