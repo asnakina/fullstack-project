@@ -6,7 +6,7 @@ function ReviewForm(props) {
       e.preventDefault();
       props.onSubmit(props.location.id);
     }}>
-       <h2>Your comment:</h2>
+       <h2 className="smallHeaders">Your comment:</h2>
        <textarea type='text'
               onChange={props.onChange}
               value={props.reviewFormData}

@@ -1,3 +1,6 @@
+                     /* Fonts for the app: */
+  /* font-family: 'Pacifico', cursive; */
+
 *{
   margin: 0;
   padding: 0;
@@ -37,6 +40,7 @@
   font-size: 25px;
   font-weight: 400;
   text-align: center;
+  /* font-family: 'Pacifico', cursive; */
   /* display: block; */
 }
 
@@ -44,6 +48,7 @@
   align-self: center;
   text-decoration: none;
   color: #009432;
+  text-shadow: 1px 1px black;
   font-weight: bold;
 }
 
@@ -74,14 +79,22 @@
 }
 
 header {
-  height: 10vh;
+  height: 12vh;
   text-align: center;
-  animation: breathing1 5s ease-in-out infinite delay 2s;
+  font-family: 'Pacifico', cursive;
+  animation: breathingOne 5s ease-in-out infinites;
+  /* animation-delay: 3s; */
   font-size: 30px;
-  letter-spacing: .1em
+  letter-spacing: .1em;
 }
 
- @keyframes breathing1 {
+header h1 {
+  margin-top: -2vh;
+  color: #01a3a4;
+  animation: breathingOne 5s ease-in-out infinites;
+}
+
+ @keyframes breathingOne {
   0% {
     text-shadow: 3px 2px white;
   }
@@ -93,7 +106,7 @@ header {
   }
 }
 
-@keyframes breathing2 {
+@keyframes breathingTwo {
  0% {
    text-shadow: 3px 2px white;
  }
@@ -128,42 +141,45 @@ header {
   margin-left: 40vw;
   padding-top: 5vh;
   cursor: pointer;
-  animation: breathing2 5s ease-in-out infinite;
+  animation: breathingTwo 5s ease-in-out infinite;
+  animation-delay: 3s;
 }
 
 #scheduleText {
   margin-left: -50vw;
   padding-top: 5vh;
   cursor: pointer;
-  animation: breathing1 5s ease-in-out infinite;
+  animation: breathingOne 5s ease-in-out infinite;
 }
 
 #aboutText {
   margin-left: 7vw;
   padding-top: 5vh;
   cursor: pointer;
-  animation: breathing2 5s ease-in-out infinite;
+  animation: breathingTwo 5s ease-in-out infinite;
+  animation-delay: 3s;
 }
 
 #retreatsText {
   margin-left: -45vw;
   padding-top: 4vh;
   cursor: pointer;
-  animation: breathing2 5s ease-in-out infinite;
+  animation: breathingTwo 5s ease-in-out infinite;
+  animation-delay: 3s;
 }
 
 #reviewsText {
   margin-left: 50vw;
   padding-top: 5vh;
   cursor: pointer;
-  animation: breathing1 5s ease-in-out infinite;
+  animation: breathingOne 5s ease-in-out infinite;
 }
 
 #profileText {
   margin-left: -5vw;
   padding-top: 3vh;
   cursor: pointer;
-  animation: breathing1 5s ease-in-out infinite;
+  animation: breathingOne 5s ease-in-out infinite;
 }
 
 /* .mainClass > img {
@@ -202,37 +218,51 @@ header {
   opacity: 0.9;
   padding: 10px 0;
   font-weight: 400;
-  /* position: relative; */
 }
 
 .locationsHeader {
   color: white;
   font-size: 7vh;
-  /* position: absolute; */
+  text-align: left;
+  text-shadow: 2px 2px #01a3a4;
 }
 
 .ReviewsRendering {
+  padding: 8px;
+  font-size: 3vh;
+  color: black;
   text-decoration-style: wavy;
+  text-decoration-color: white;
+  text-decoration-line: underline;
 }
 
 .LocationsRendering {
-  background-color: pink;
+  background-color: #01a3a4;
   width: 38vw;
+  overflow: scroll;
 }
 
 .SubmitForms {
   display: flex;
   justify-content: space-around;
 }
-                       /* Form: */
+
+                                     /* Reviews: */
+.smallHeaders {
+  font-family: 'Pacifico', cursive;
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 3px 3px black;
+
+}
+                                     /* Form: */
 .submitBtnStyle {
   width: 8vw;
   height: 4vh;
   font-size: 2.5vh;
-  color: green;
   opacuty: 0.7;
   border: solid 1px black;
-  margin-top: 20px;
+  margin: 10px 0px;
   border-opacity: 0.7;
   border-radius: 20px;
 }
@@ -250,6 +280,7 @@ header {
   font-size: 2vh;
   border-radius: 12px;
   font-weight: 400;
+  margin-left: 5px;
 }
 
 .editTextArea {

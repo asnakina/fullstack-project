@@ -9,7 +9,7 @@ export default class ReviewsView extends Component {
    render() {
      return (
        <div>
-          <h2>Reviews:</h2>
+          <h2 className="smallHeaders">Reviews:</h2>
           <ReviewsRender reviews={this.props.reviews}
                          handleUpdate={this.props.handleUpdate}
                          handleDelete={this.props.handleDelete}/>

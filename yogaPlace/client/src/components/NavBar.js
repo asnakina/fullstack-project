@@ -20,6 +20,12 @@ function NavBar(props) {
         <Link to='/classes'>Schedule</Link>
       </li>
       <li>
+        <Link to='/retreats'>Retreats</Link>
+      </li>
+      <li>
+        <Link to='/exercises'>Exercises</Link>
+      </li>
+      <li>
         <Link to='/auth'>Log In / Register</Link>
       </li>
       <li>
