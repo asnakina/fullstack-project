@@ -17,7 +17,7 @@ function NavBar(props) {
         <Link to='/locations'>Locations/Reviews</Link>
       </li>
       <li>
-        <Link to='/classes'>Classes/Reviews</Link>
+        <Link to='/classes'>Schedule</Link>
       </li>
       <li>
         <Link to='/auth'>Log In / Register</Link>
@@ -34,6 +34,7 @@ function NavBar(props) {
 
 export default NavBar;
 
+                        // Another way of codding the Navbar:
 // import { Link } from 'react-router-dom';
 // import MainView from './MainView';
 // import AboutView from './AboutView';

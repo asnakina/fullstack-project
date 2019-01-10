@@ -71,20 +71,17 @@
 .content {
   width: 85vw;
   height: 100vh;
-  text-align: center;
-  align-items: center;
 }
 
 header {
   height: 10vh;
   text-align: center;
-  align-items: center;
-  animation: breathing 5s ease-in-out infinite;
+  animation: breathing1 5s ease-in-out infinite delay 2s;
   font-size: 30px;
   letter-spacing: .1em
 }
 
- @keyframes breathing {
+ @keyframes breathing1 {
   0% {
     text-shadow: 3px 2px white;
   }
@@ -96,6 +93,18 @@ header {
   }
 }
 
+@keyframes breathing2 {
+ 0% {
+   text-shadow: 3px 2px white;
+ }
+ 40% {
+   text-shadow: 3px 2px black;
+ }
+ 100% {
+   text-shadow: 3px 2px white;
+ }
+}
+
 .headerContent {
   display: flex;
   flex-direction: column;
@@ -104,14 +113,57 @@ header {
 .mainClass {
   background-image: url("./images/mainTropical.jpg");
   background-size: cover;
-  height: 85vh;
+  height: 89vh;
   text-align: center;
 }
 
-.mainClass > h2 {
+.breathingLines {
   color: white;
-  text-align: center;
-  align-self: center;
+  font-size: 8vh;
+  /* text-align: center;
+  align-self: center; */
+}
+
+#exercisesText {
+  margin-left: 40vw;
+  padding-top: 5vh;
+  cursor: pointer;
+  animation: breathing2 5s ease-in-out infinite;
+}
+
+#scheduleText {
+  margin-left: -50vw;
+  padding-top: 5vh;
+  cursor: pointer;
+  animation: breathing1 5s ease-in-out infinite;
+}
+
+#aboutText {
+  margin-left: 7vw;
+  padding-top: 5vh;
+  cursor: pointer;
+  animation: breathing2 5s ease-in-out infinite;
+}
+
+#retreatsText {
+  margin-left: -45vw;
+  padding-top: 4vh;
+  cursor: pointer;
+  animation: breathing2 5s ease-in-out infinite;
+}
+
+#reviewsText {
+  margin-left: 50vw;
+  padding-top: 5vh;
+  cursor: pointer;
+  animation: breathing1 5s ease-in-out infinite;
+}
+
+#profileText {
+  margin-left: -5vw;
+  padding-top: 3vh;
+  cursor: pointer;
+  animation: breathing1 5s ease-in-out infinite;
 }
 
 /* .mainClass > img {
