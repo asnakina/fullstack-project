@@ -15,10 +15,11 @@
 }
 
 .navBar{
-  width: 15vw;
+  width: 17vw;
   height: 100vh;
   align-items: center;
   justify-content: space-around;
+  padding-left: 5px;
   /* text-align: center; */
 }
 
@@ -42,7 +43,8 @@
 .navBar > li > a {
   align-self: center;
   text-decoration: none;
-  color: green;
+  color: #009432;
+  font-weight: bold;
 }
 
 .navBar > li a:hover {
@@ -133,24 +135,43 @@ header {
 }
 
                               /* Locations: */
-.AllLocations {
-  display: flex;
-  justify-content: space-around;
+.locationsReviews {
+  background-image: url("./images/mainTropical.jpg");
+  background-size: cover;
+  height: 90vh;
 }
 
-h2 {
-  color: green;
+.LocationsReviewsSubmit {
+  /* float: center; */
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  /* width: 70vw; */
+  opacity: 0.9;
+  padding: 10px 0;
+  font-weight: 400;
+  /* position: relative; */
+}
+
+.locationsHeader {
+  color: white;
+  font-size: 7vh;
+  /* position: absolute; */
 }
 
 .ReviewsRendering {
   text-decoration-style: wavy;
 }
 
+.LocationsRendering {
+  background-color: pink;
+  width: 38vw;
+}
+
 .SubmitForms {
   display: flex;
   justify-content: space-around;
 }
-
                        /* Form: */
 .submitBtnStyle {
   width: 8vw;
@@ -163,6 +184,29 @@ h2 {
   border-opacity: 0.7;
   border-radius: 20px;
 }
+
+.reviewTextArea {
+  width: 25vw;
+  height: 5vh;
+  font-size: 2vh;
+  font-weight: 400;
+}
+
+.editDeleteBtn {
+  width: 5vw;
+  height: 3vh;
+  font-size: 2vh;
+  border-radius: 12px;
+  font-weight: 400;
+}
+
+.editTextArea {
+  width: 25vw;
+  height: 5vh;
+  font-size: 2vh;
+  font-weight: 400;
+}
+
 /* .newFormStyle {
   width: 200px;
   height: 70px;

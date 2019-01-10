@@ -10,8 +10,9 @@ export default class ReviewsView extends Component {
      return (
        <div>
           <h2>Reviews:</h2>
-          <ReviewsRender reviews={this.props.reviews} handleUpdate={this.props.handleUpdate} handleDelete={this.props.handleDelete}/>
-          {/*<ReviewsForm />*/}
+          <ReviewsRender reviews={this.props.reviews}
+                         handleUpdate={this.props.handleUpdate}
+                         handleDelete={this.props.handleDelete}/>
        </div>
      )
    }

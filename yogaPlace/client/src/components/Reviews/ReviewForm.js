@@ -7,9 +7,10 @@ function ReviewForm(props) {
       props.onSubmit(props.location.id);
     }}>
        <h2>Your comment:</h2>
-       <input type='text'
+       <textarea type='text'
               onChange={props.onChange}
               value={props.reviewFormData}
+              className="reviewTextArea"
        />
        <br></br>
        <button type="submit" className="submitBtnStyle">Submit</button>

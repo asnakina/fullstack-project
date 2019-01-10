@@ -107,11 +107,11 @@ export default class LocationsView extends Component {
        <Redirect to="/profile" />
      )*/}
      return (
-       <div>
-          <h2>Locations:</h2>
-            <div className="AllLocations">
+       <div className="locationsReviews">
+          <h2 className="locationsHeader">Locations:</h2>
+            <div className="LocationsReviewsSubmit">
               {this.state.locations.map(theLocation => (
-                 <div key={theLocation.id}>
+                 <div key={theLocation.id} className="LocationsRendering">
                    <h3>{theLocation.name}</h3>
                    <h3>{theLocation.address}</h3>
                    <h3>{theLocation.lat}{theLocation.lng}</h3>
@@ -124,28 +124,21 @@ export default class LocationsView extends Component {
                    <div className="SubmitForms">
                      <ReviewForm onChange={this.handleChange}
                                  onSubmit={this.handleSubmit}
-                                reviewFormData={this.state.review}
-                                location={theLocation}
+                                 reviewFormData={this.state.review}
+                                 location={theLocation}
                        />
                    </div>
-                </div>
-               )
-             )
-           }
+                  </div>
+                 )
+                )
+               }
+            </div>
         </div>
-
-        </div>
-     )
+      )
    }
 }
 
-// this.setState (
-//   {
-//     redirectToProfile: true
-//   }
-// );
-// await this.addReview(this.state.reviewFormData.description);
-
+// Another way of getting routs without "services" folder:
 // async addReview() {
 //   const token = localStorage.getItem('token');
 //   console.log(token)

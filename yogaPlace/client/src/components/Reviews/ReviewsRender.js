@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import '../../App.css';
 
 export default class ReviewsRender extends Component {
   constructor(props) {
@@ -22,36 +22,45 @@ export default class ReviewsRender extends Component {
       <div>
        {this.props.reviews.map(eachReview => (
          <div key={eachReview.id}>
-         {this.state.isEditing === eachReview.id
+          {this.state.isEditing === eachReview.id
            ?
            (<div>
-           <form onSubmit={(e) => {
-             e.preventDefault();
-             this.props.handleUpdate(eachReview.id, this.state.reviewBody);
-             this.setState({
-               isEditing: null,
-               reviewBody: ""
-             })
-           }}>
-           <input type="text" name="reviewBody" value={this.state.reviewBody} onChange={this.handleChange}/>
-           <button>Submit</button>
-           </form>
-           </div>)
+              <form onSubmit={(e) => {
+                 e.preventDefault();
+                 this.props.handleUpdate(eachReview.id, this.state.reviewBody);
+                 this.setState({
+                   isEditing: null,
+                   reviewBody: ""
+                   })
+                  }}>
+                 <textarea type="text"
+                      name="reviewBody"
+                      value={this.state.reviewBody}
+                      onChange={this.handleChange}
+                      className="editTextArea"
+                      />
+                 <button className="editDeleteBtn">Submit</button>
+               </form>
+            </div>)
            :
            <div>
-            <h3 className="ReviewsRendering">{eachReview.description}</h3>
-            <button onClick={() => {
+             <h3 className="ReviewsRendering">{eachReview.description}</h3>
+             <button onClick={() => {
               this.setState({
                 isEditing: eachReview.id,
                 reviewBody: eachReview.description
-              })
-            }}>Edit</button>
-            <button onClick={() => {this.props.handleDelete(eachReview.id)}}> Delete </button>
-            </div>
+               })
+             }}
+             className="editDeleteBtn"
+             >Edit</button>
+             <button onClick={() => {this.props.handleDelete(eachReview.id)}}
+             className="editDeleteBtn"
+             >Delete</button>
+           </div>
           }
         </div>
       ))}
     </div>
-  )
- }
+   )
+  }
 }
