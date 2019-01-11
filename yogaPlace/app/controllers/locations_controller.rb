@@ -3,9 +3,9 @@ class LocationsController < ApplicationController
 
   # GET /locations
   def index
-    @locations = Location.all
+    @locations = Location.includes(:the_classes).all
 
-    render json: @locations
+    render json: @locations, include: [:the_classes, :reviews]
   end
 
   # GET /locations/1
