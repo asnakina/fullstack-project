@@ -91,15 +91,15 @@ export default class LocationsView extends Component {
   }
 
 //Update
-    async handleUpdate(reviewId, reviewBody) {
-        const token = localStorage.getItem('token');
-        const review = await updateReview(token, reviewId, { description: reviewBody });
-        const reviews = await getAllReviews();
-        this.setState(prevState => ({
-          ...prevState.reviews,
-          reviews: reviews
-        }))
-    }
+  async handleUpdate(reviewId, reviewBody) {
+      const token = localStorage.getItem('token');
+      const review = await updateReview(token, reviewId, { description: reviewBody });
+      const reviews = await getAllReviews();
+      this.setState(prevState => ({
+        ...prevState.reviews,
+        reviews: reviews
+      }))
+  }
 
    render() {
      {/*if(this.state.redirectToProfile)
