@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import {getAllClasses} from '../services/classes';
-import {getAllLocations} from '../services/locations';
-import '../App.css';
+import {getAllClasses} from '../../services/classes';
+import {getAllLocations} from '../../services/locations';
+import '../../App.css';
+import ClassesRender from './ClassesRender';
 
 export default class ClassesView extends Component {
   constructor(props) {
@@ -51,30 +52,26 @@ export default class ClassesView extends Component {
 
    render() {
      return (
-       <div>
-        <h2>Locations:</h2>
-        <div className="AllLocations">
-          {this.state.locations.map(theLocation => (
-             <div key={theLocation.id}>
-               <h3>{theLocation.name}</h3>
-               <h3>{theLocation.address}</h3>
-               <h3>{theLocation.lat}{theLocation.lng}</h3>
-               <br></br>
-               <div classes={this.state.classes.filter(theClass => the_class.id === the_class_locations_['the_class_id'])}/>
-            </div>
-          <h2>Classes:</h2>
-            <div className="AllClasses">
-              {this.state.classes.map(oneClass => (
-                 <div key={oneClass.id}>
-                   <h3>{oneClass.title}</h3>
-                   <h3>{oneClass.date}</h3>
-                   <h3>{oneClass.description}</h3>
-                </div>
+       <div className="classesLocations">
+         <h2 className="mediumHeader">Schedule:</h2>
+           <div className="LocationsReviewsSubmit">
+              <span>Locations:</span>
+                {this.state.locations.map(theLocation => (
+                 <div key={theLocation.id}>
+                   <h3>{theLocation.name}</h3>
+                   <h3>{theLocation.address}</h3>
+                   <h3>{theLocation.lat}{theLocation.lng}</h3>
+                   <br></br>
+                   {/*//it will give us an array of classes:*/}
+                   <ClassesRender classes={this.state.classes.filter(theClass => theClass.id === theLocation.id)} />
+                   {/*<ClassesRender classes={this.state.classes.filter(theClass => theClass.id === theLocation[`the_class_id`])} />*/}
+                   {/*//we map the classes in ClassesRendering component*/}
+                 </div>
                 )
-              )
+               )
              }
           </div>
-        </div>
+      </div>
      )
-  }
+   }
 }

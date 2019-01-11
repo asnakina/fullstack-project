@@ -17,7 +17,7 @@ function NavBar(props) {
         <Link to='/locations'>Locations/Reviews</Link>
       </li>
       <li>
-        <Link to='/classes'>Schedule</Link>
+        <Link to='/the_classes'>Schedule</Link>
       </li>
       <li>
         <Link to='/retreats'>Retreats</Link>

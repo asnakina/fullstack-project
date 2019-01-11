@@ -12,7 +12,7 @@ function MainView (props) {
              </Link>
             </li>
             <li>
-             <Link to="/schedule">
+             <Link to="/the_classes">
                <h2 className="breathingLines" id="scheduleText">Schedule</h2>
              </Link>
             </li>

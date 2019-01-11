@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../App.css';
 
 class Carousel extends Component {
   constructor(props) {
@@ -98,7 +99,6 @@ class Carousel extends Component {
   componentDidMount() {
     this.setTimer();
 }
-
 
   render() {
     return (
