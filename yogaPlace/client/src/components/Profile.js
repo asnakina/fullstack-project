@@ -38,7 +38,7 @@ class Profile extends Component {
     }
     return (
       <div>
-        <h2>Hello, User</h2>
+        <h2>Hello User!</h2>
         <button onClick={this.logOut}>Log Out</button>
         <ul>
            <li>

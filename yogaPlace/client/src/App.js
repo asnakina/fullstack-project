@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import decode from 'jwt-decode'; //package to decode a token for id-s
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import NavBar from './components/NavBar';
@@ -12,8 +13,8 @@ import RetreatsView from './components/RetreatsView';
 import ClassesView from './components/Classes/ClassesView';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       login: {
         email: '',
@@ -24,8 +25,10 @@ class App extends Component {
         password: '',
         password_confirmation: ''
       },
-      isLoggedIn: false
+      isLoggedIn: false,
+      loggedInUser: {}
     }
+    this.setLoggedInUser = this.setLoggedInUser.bind(this)
   }
 
 //   handleChange(e) {
@@ -34,13 +37,31 @@ class App extends Component {
 //     const {name, value} = e.target
 //     this.setState(prevState => (
 //       {
-//         login: {
+//         loggedInUser: {
 //           ...prevState.login,
 //           [name] : value
 //         }
 //       }
 //     ))
 //   }
+
+componentDidMount() {
+  if (localStorage.getItem("token")) {
+    this.getLoggedInUser();
+  }
+}
+
+  getLoggedInUser() {
+    const token = localStorage.getItem("token");
+    const decodedToken = decode(token);
+    this.setLoggedInUser(decodedToken);
+  }
+
+  setLoggedInUser(user) {
+    this.setState({
+      loggedInUser: user
+    })
+  }
 
   handleRegisterChange(e) {
     const {name, value} = e.target
@@ -71,7 +92,12 @@ class App extends Component {
             {/*making fake routes:*/}
               <Route exact path="/" component={MainView} />
               <Route exact path="/about" component={AboutView} />
-              <Route exact path="/locations" component={LocationsView} />
+              <Route exact path="/locations"
+                render={((props) => <LocationsView
+                  {...props}
+                  loggedInUser = {this.state.loggedInUser}
+                />)}
+              />
               <Route exact path="/exercises" component={ExercisesView} />
               <Route exact path="/retreats" component={RetreatsView} />
               <Route exact path="/the_classes" component={ClassesView} />
@@ -79,7 +105,11 @@ class App extends Component {
                 ?
                 <Route path="/profile" component={Profile} />
                 :
-                <Route path="/auth" component={AuthForm} />
+                <Route path="/auth"
+                render={((props) => <AuthForm
+                  {...props}
+                  setLoggedInUser= {this.setLoggedInUser}
+                />)}/>
               }
             </div>
           </div>

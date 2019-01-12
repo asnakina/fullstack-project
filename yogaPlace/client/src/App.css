@@ -363,7 +363,7 @@ header h1 {
   font-weight: 400;
 }
 
-                              /* Classes: */
+                              /* Schedule: */
 .classesLocations {
   display: flex;
   flex-direction: column;
@@ -372,10 +372,20 @@ header h1 {
   height: 90vh;
 }
 
+.LocationsClassesRendering {
+
+}
+
+#locationsSpan {
+  margin: 0 auto;
+  align-items: center;
+}
+
 
                            /* Carousel: */
 .carousel {
-  width: 30vw;
+  align-items: center;
+  width: 40vw;
   height: 30vh;
 }
 

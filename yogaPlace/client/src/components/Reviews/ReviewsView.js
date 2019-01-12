@@ -12,7 +12,8 @@ export default class ReviewsView extends Component {
           <h2 className="smallHeaders">Reviews:</h2>
           <ReviewsRender reviews={this.props.reviews}
                          handleUpdate={this.props.handleUpdate}
-                         handleDelete={this.props.handleDelete}/>
+                         handleDelete={this.props.handleDelete}
+                         loggedInUser={this.props.loggedInUser}/>
        </div>
      )
    }

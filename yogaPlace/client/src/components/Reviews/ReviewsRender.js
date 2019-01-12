@@ -45,17 +45,23 @@ export default class ReviewsRender extends Component {
            :
            <div>
              <h3 className="ReviewsRendering">{eachReview.description}</h3>
-             <button onClick={() => {
-              this.setState({
-                isEditing: eachReview.id,
-                reviewBody: eachReview.description
-               })
-             }}
-             className="editDeleteBtn"
-             >Edit</button>
-             <button onClick={() => {this.props.handleDelete(eachReview.id)}}
-             className="editDeleteBtn"
-             >Delete</button>
+             {
+               eachReview.user_id === this.props.loggedInUser.sub?
+               <div>
+                 <button onClick={() => {
+                  this.setState({
+                    isEditing: eachReview.id,
+                    reviewBody: eachReview.description
+                   })
+                 }}
+                 className="editDeleteBtn"
+                 >Edit</button>
+                 <button onClick={() => {this.props.handleDelete(eachReview.id)}}
+                 className="editDeleteBtn"
+                 >Delete</button>
+               </div>
+               : ""
+             }
            </div>
           }
         </div>

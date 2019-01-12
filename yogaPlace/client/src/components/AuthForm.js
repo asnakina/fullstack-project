@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import decode from 'jwt-decode'; //package to decode a token for id-s
 //we import login for ...
 import { login } from '../services/auth';
 import { Redirect } from 'react-router-dom';
@@ -24,11 +25,13 @@ class AuthForm extends Component {
     console.log(tokenData);
     localStorage.setItem('token', tokenData.jwt);
     this.setState({ redirectToProfile: true });
+    const decodedToken = decode(tokenData.jwt)
+    this.props.setLoggedInUser(decodedToken)
   }
 
   handleChange(e) {
-    //name is email or password
-    const {name, value} = e.target
+  //name is email or password
+   const {name, value} = e.target
     this.setState(prevState => (
       {
         credentials: {
@@ -48,6 +51,7 @@ class AuthForm extends Component {
        <LoginForm handleChange={this.handleChange}
                   handleLogin = {this.handleLogin}
                   login={this.state.credentials} />
+       {/*? <RegisterForm /> : */}
       </div>
     )
   }

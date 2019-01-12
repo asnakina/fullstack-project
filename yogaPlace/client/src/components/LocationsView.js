@@ -14,7 +14,7 @@ export default class LocationsView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    review: '',
+    review: ["",""],
     redirectToProfile: false,
     locations: [],
     reviews: []
@@ -61,21 +61,24 @@ export default class LocationsView extends Component {
   //   }
   // }
 
-  handleChange(e) {
+  handleChange(reviewBody, index) {
     //name is description in this case
-    const {name, value} = e.target
-    this.setState({review: value});
+    const reviewArr = this.state.review
+    reviewArr[index] = reviewBody
+    this.setState({
+      review: reviewArr
+    });
   }
 
-  async handleSubmit(location_id) {
+  async handleSubmit(location_id, index) {
     console.log(this.state.review);
     const token = localStorage.getItem('token');
     if(this.state.review) {
-      const review = await createReview(token, {description: this.state.review, location_id });
+      const review = await createReview(token, {description: this.state.review[index], location_id });
     }
       this.getReviews();
       this.setState({
-        review: ''
+        review: ["",""]
       });
     }
 
@@ -110,7 +113,7 @@ export default class LocationsView extends Component {
        <div className="locationsReviews">
           <h2 className="mediumHeader">Locations:</h2>
             <div className="LocationsReviewsSubmit">
-              {this.state.locations.map(theLocation => (
+              {this.state.locations.map((theLocation, index) => (
                  <div key={theLocation.id} className="LocationsRendering">
                    <h3>{theLocation.name}</h3>
                    <h3>{theLocation.address}</h3>
@@ -119,6 +122,7 @@ export default class LocationsView extends Component {
                    <ReviewsView reviews={this.state.reviews.filter(review => theLocation.id === review['location_id'])}
                                 handleUpdate={this.handleUpdate}
                                 handleDelete={this.handleDelete}
+                                loggedInUser={this.props.loggedInUser}
                                 />
 
                    <div className="SubmitForms">
@@ -126,6 +130,7 @@ export default class LocationsView extends Component {
                                  onSubmit={this.handleSubmit}
                                  reviewFormData={this.state.review}
                                  location={theLocation}
+                                 index={index}
                        />
                    </div>
                   </div>
