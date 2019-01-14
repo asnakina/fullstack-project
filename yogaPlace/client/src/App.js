@@ -86,7 +86,9 @@ componentDidMount() {
          <div className="headerContent">
             <header>
               <h1>Yoga Place</h1>
-              <audio ref="audio_tag" src="./images/Samba.mp3" controls Autoplay />
+              <audio ref="audio" src={require('./images/Samba.mp3')} controls autoPlay>
+                 <param name="autoplay" value="true" />
+              </audio>
               {/*<img className="animation" src={require('./images/animation1.jpg')} alt={'main'} />*/}
             </header>
             <div className="content">

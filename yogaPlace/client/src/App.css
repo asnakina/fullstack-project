@@ -406,6 +406,14 @@ header h1 {
   align-items: center;
 }
 
+.LocationsReviewsSubmit > span {
+  display: flex;
+  margin: 0 auto;
+  padding: 10px;
+  /* flex-direction: row; */
+  align-items: center;
+}
+
                             /* Login: */
 .loginRegisterBackground {
   display: flex;
@@ -448,10 +456,25 @@ header h1 {
 
                            /* Carousel: */
 .carousel {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  width: 40vw;
-  height: 30vh;
 }
+
+.carouselOpacity {
+  width: 70vw;
+  height: 60vh;
+  background-color: white;
+  opacity: 0.8;
+  margin: 0 auto;
+}
+
+.carousel img {
+  align-items: center;
+  width: 55vw;
+  height: 50vh;
+}
+
 
                           /* Animation for Main page */
 /* .animation {
