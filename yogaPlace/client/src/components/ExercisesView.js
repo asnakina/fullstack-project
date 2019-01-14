@@ -9,9 +9,13 @@ function ExercisesView(props) {
         <img src={ require('../images/pose1.gif') } alt={'main'} />
         <img src={ require('../images/pose3.gif') } alt={'main'} />
         <img src={ require('../images/pose5.gif') } alt={'main'} />
+      </div>
+      {/*<div className="exercisesTextContent">
+       <div className="gifs">
         <img src={ require('../images/pose6.gif') } alt={'main'} />
         <img src={ require('../images/pose7.gif') } alt={'main'} />
-       </div>
+        </div>
+      </div>*/}
     </div>
   )
 }

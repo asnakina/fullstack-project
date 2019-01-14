@@ -17,6 +17,12 @@
   text-align: left;
   text-shadow: 2px 2px #01a3a4;
 }
+
+audio {
+  float: right;
+  margin-top: -9vh;
+  margin-right: 3vh;
+}
                            /* NavBar: */
 .navBarContent {
   display: flex;
@@ -197,16 +203,6 @@ header h1 {
   animation: breathingOne 5s ease-in-out infinite;
 }
 
-/* .mainClass > img {
-  width: 80vw;
-  position: relative;
-}
-
-.mainClass > h2 {
-  z-index: 10;
-  position: absolute;
-} */
-
                                /* About: */
 .aboutTextContent {
   background-image: url("./images/mainTropical.jpg");
@@ -253,13 +249,15 @@ header h1 {
 
 .gifs {
   background-color: white;
+  /* opacity: 0.7; */
   height: 80vh;
-  width: 70vw;
+  width: 75vw;
   position: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 auto;
+  /* position: relative; */
   /* opacity: 0.8; */
 }
 
@@ -268,6 +266,7 @@ header h1 {
   z-index: 10;
   width: 35vw;
   height: 35vh;
+  /* position: absolute; */
 }
 
                               /* Retreats: */
@@ -287,6 +286,7 @@ header h1 {
 .locationsReviews {
   background-image: url("./images/mainTropical.jpg");
   background-size: cover;
+  background-repeat: repeat-y;
   height: 90vh;
 }
 
@@ -299,6 +299,11 @@ header h1 {
   font-weight: 400;
 }
 
+.locationWord {
+  align-items: center;
+  margin: 0 auto;
+}
+
 .ReviewsRendering {
   padding: 8px;
   font-size: 3vh;
@@ -306,6 +311,8 @@ header h1 {
   text-decoration-style: wavy;
   text-decoration-color: white;
   text-decoration-line: underline;
+    /* background-color: lightgreen;
+    margin: 10px; */
 }
 
 .LocationsRendering {
@@ -370,6 +377,28 @@ header h1 {
   background-image: url("./images/mainTropical.jpg");
   background-size: cover;
   height: 90vh;
+}
+
+.ClassesRendering {
+  padding: 8px;
+  font-size: 2vh;
+  color: black;
+  /* text-decoration-style: wavy;
+  text-decoration-color: white;
+  text-decoration-line: underline; */
+}
+
+.classTitle {
+  background-color: white;
+  margin: 10px;
+}
+
+.classDate {
+  color: white;
+}
+
+.classDescription {
+  font-style: italic;
 }
 
 .LocationsClassesRendering {

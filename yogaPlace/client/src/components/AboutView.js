@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function AboutView(props) {
   return (
@@ -12,7 +12,13 @@ function AboutView(props) {
               <li>We have retreats in Costa Rica, Thailand and Bali every half a year with fantastic experience and life changing vacations.
               You mind, body and soul will thank you for this!</li>
            </ul>
+           <div className="videoStyle" loop autoplay>
+              <iframe width="728" height="410" src="https://www.youtube.com/embed/yrZLjh9DI_I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+           </div>
         </div>
+        {/*<video loop autoPlay>
+          <source src="https://www.youtube.com/watch?v=SRKwHAHIqow" type="video/mp4" />
+        </video>
        {/*<img src={ require('../images/pose2.gif') } alt={'main'} />*/}
     </div>
   )

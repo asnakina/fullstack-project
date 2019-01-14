@@ -77,7 +77,9 @@ export default class ClassesView extends Component {
        <div className="classesLocations">
          <h2 className="mediumHeader">Schedule:</h2>
            <div className="LocationsReviewsSubmit">
+             {/*<div className="locationWord">*/}
               <span id="locationsSpan">Locations:</span>
+             {/*</div>*/}
                 {this.state.locations.map(theLocation => (
                  <div key={theLocation.id} className="LocationsRendering">
                    <h3>{theLocation.name}</h3>
