@@ -297,6 +297,14 @@ header h1 {
   opacity: 0.9;
   padding: 10px 0;
   font-weight: 400;
+  flex-flow: row wrap;
+}
+
+.LocationsReviewsSubmit > span {
+  flex: 0 100%;
+  justify-content: center;
+  font-size: 4vh;
+  font-weight: 500;
 }
 
 .locationWord {
