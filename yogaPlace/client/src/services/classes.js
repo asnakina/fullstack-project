@@ -3,7 +3,7 @@ import axios from 'axios';
 async function getAllClasses() {
   console.log('Fetching all classes');
   const response = await axios({
-    url: '/the_classes'
+    url: '/api/the_classes'
     // header: {
     //   'Authorization': `Bearer ${localStorage.getItem('token')}`
     // }
@@ -15,7 +15,7 @@ async function getAllClasses() {
 async function getMyClasses() {
   console.log('Fetching my classes');
   const response = await axios({
-    url: '/the_classes/mine',
+    url: '/api/the_classes/mine',
     header: {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     }
@@ -26,7 +26,7 @@ async function getMyClasses() {
 
  async function deleteMyClasses(token, id) {
    try {
-     const review = await axios.delete('/the_classes/${id}/mine', {
+     const review = await axios.delete('/api/the_classes/${id}/mine', {
      headers: {
            'Authorization': `Bearer ${token}`
          }
