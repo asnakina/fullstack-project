@@ -3,7 +3,7 @@ import axios from 'axios';
 async function getAllReviews() {
   console.log('Fetching All reviews');
   const response = await axios({
-    url: '/reviews'
+    url: '/api/reviews'
     // header: {
     //   'Authorization': `Bearer ${localStorage.getItem('token')}`
     // }
@@ -15,7 +15,7 @@ async function getAllReviews() {
  async function getMyReviews() {
    console.log('Fetching My reviews');
    const response = await axios({
-     url: '/reviews/mine',
+     url: '/api/reviews/mine',
      header: {
        'Authorization': `Bearer ${localStorage.getItem('token')}`
      }
@@ -27,7 +27,7 @@ async function getAllReviews() {
  async function createReview(token, formData) {
     try {
       console.log(localStorage.getItem('token'));
-      const review = await axios.post('/reviews', formData, {
+      const review = await axios.post('/api/reviews', formData, {
         headers: {
               'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
@@ -41,7 +41,7 @@ async function getAllReviews() {
 
  async function updateReview(token, id, formData) {
    try {
-     const review = await axios.put(`/reviews/${id}`, formData, {
+     const review = await axios.put(`/api/reviews/${id}`, formData, {
      headers: {
            'Authorization': `Bearer ${token}`
          }
@@ -55,7 +55,7 @@ async function getAllReviews() {
 
  async function deleteReview(token, id) {
    try {
-     const review = await axios.delete(`/reviews/${id}`, {
+     const review = await axios.delete(`/api/reviews/${id}`, {
      headers: {
            'Authorization': `Bearer ${token}`
          }

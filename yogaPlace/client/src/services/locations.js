@@ -3,7 +3,7 @@ import axios from 'axios';
 async function getAllLocations() {
   console.log('Fetching All locations');
   const response = await axios({
-    url: '/locations',
+    url: '/api/locations',
     header: {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     }

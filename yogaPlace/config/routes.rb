@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # scope '/api' do
+  scope '/api' do
   resources :locations
   post 'user_token' => 'user_token#create'
   resources :the_classes
@@ -7,4 +7,4 @@ Rails.application.routes.draw do
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
  end
-# end
+end

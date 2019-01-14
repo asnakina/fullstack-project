@@ -87,8 +87,8 @@ audio {
                              /* Main: */
 
 .content {
-  width: 85vw;
-  height: 100vh;
+  width: 83vw;
+  /* height: 100vh; */
 }
 
 header {
