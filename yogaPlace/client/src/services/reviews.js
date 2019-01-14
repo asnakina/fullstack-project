@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-async function getAllReviews() {
+ async function getAllReviews() {
   console.log('Fetching All reviews');
   const response = await axios({
     url: '/api/reviews'

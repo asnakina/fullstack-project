@@ -28,7 +28,8 @@ class App extends Component {
       isLoggedIn: false,
       loggedInUser: {}
     }
-    this.setLoggedInUser = this.setLoggedInUser.bind(this)
+    this.setLoggedInUser = this.setLoggedInUser.bind(this);
+    this.removeLoggedInUser = this.removeLoggedInUser.bind(this);
   }
 
 //   handleChange(e) {
@@ -75,13 +76,19 @@ componentDidMount() {
     ))
   }
 
+  removeLoggedInUser() {
+    this.setState({
+      loggedInUser: {}
+    })
+  }
+
   render() {
     return (
       <Router>
        <div className="App">
          <div className="navBarContent">
            <div className="navBar">
-             <NavBar />
+             <NavBar loggedInUser={this.state.loggedInUser}/>
            </div>
          <div className="headerContent">
             <header>
@@ -104,16 +111,17 @@ componentDidMount() {
               <Route exact path="/exercises" component={ExercisesView} />
               <Route exact path="/retreats" component={RetreatsView} />
               <Route exact path="/the_classes" component={ClassesView} />
-              {this.state.isLoggedIn
-                ?
-                <Route path="/profile" component={Profile} />
-                :
-                <Route path="/auth"
+              {/*we can give "component" or "render"*/}
+              <Route path="/profile"
+              render={((props) => <Profile
+                {...props}
+                removeLoggedInUser={this.removeLoggedInUser}
+              />)}/>
+              <Route path="/auth"
                 render={((props) => <AuthForm
                   {...props}
                   setLoggedInUser= {this.setLoggedInUser}
-                />)}/>
-              }
+              />)}/>
             </div>
           </div>
          </div>

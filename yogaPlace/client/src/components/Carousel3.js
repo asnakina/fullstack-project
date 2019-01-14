@@ -6,9 +6,9 @@ class Carousel extends Component {
     super(props)
     this.state = {
       imgUrls: [
-        require('../images/1slide.jpg'),
-        require('../images/2slide.jpg'),
-        require('../images/3slide.jpg')
+        require('../images/retreat1.jpg'),
+        require('../images/retreat2.jpg'),
+        require('../images/retreat3.jpg')
         // "https://www.justrunlah.com/wp-content/uploads/2015/11/yoga-1.jpg",
         // "http://fivesisters.co/wp-content/uploads/2018/04/istock-499609170.jpg"
       ],
@@ -103,9 +103,11 @@ class Carousel extends Component {
   render() {
     return (
       <div className="carousel">
-        <img src={ this.state.imgUrls[this.state.currentImgIndex] } />
-         {/*<button onClick={this.previousImg}>Prev</button>
-         <button onClick={this.nextImg}>Next</button>*/}
+        <div className="carouselOpacity">
+           <img src={ this.state.imgUrls[this.state.currentImgIndex] } />
+           {/*<button onClick={this.previousImg}>Prev</button>
+           <button onClick={this.nextImg}>Next</button>*/}
+        </div>
       </div>
     )
   }

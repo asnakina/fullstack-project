@@ -4,6 +4,7 @@ import decode from 'jwt-decode'; //package to decode a token for id-s
 import { login } from '../services/auth';
 import { Redirect } from 'react-router-dom';
 import LoginForm from './LoginForm';
+import RegisterForm from './RegisterForm';
 
 class AuthForm extends Component {
   constructor(props) {
@@ -47,11 +48,13 @@ class AuthForm extends Component {
   render() {
     if (this.state.redirectToProfile) return (<Redirect to="/profile" />)
     return (
-      <div>
+      <div className="LoginRegister">
        <LoginForm handleChange={this.handleChange}
                   handleLogin = {this.handleLogin}
                   login={this.state.credentials} />
-       {/*? <RegisterForm /> : */}
+       <RegisterForm handleChange={this.handleChange}
+                     register={this.state.credentials}
+                     />
       </div>
     )
   }

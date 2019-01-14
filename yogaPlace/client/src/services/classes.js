@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-async function getAllClasses() {
+ async function getAllClasses() {
   console.log('Fetching all classes');
   const response = await axios({
     url: '/api/the_classes'
@@ -12,7 +12,7 @@ async function getAllClasses() {
   return response.data;
  }
 
-async function getMyClasses() {
+ async function getMyClasses() {
   console.log('Fetching my classes');
   const response = await axios({
     url: '/api/the_classes/mine',

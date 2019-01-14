@@ -26,14 +26,15 @@ class Profile extends Component {
   }
 
   logOut(e) {
-    localStorage.removeItem('jwt');
+    localStorage.removeItem('token');
     this.setState({
       redirectAuth: true
     });
+    this.props.removeLoggedInUser();
   }
 
   render() {
-    if(this.state.redirectToAuth || !localStorage.getItem('jwt')) {
+    if(this.state.redirectToAuth || !localStorage.getItem('token')) {
       return (<Redirect to="/auth" />)
     }
     return (

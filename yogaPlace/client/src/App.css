@@ -7,6 +7,48 @@
   box-sizing: border-box;
 }
 
+html {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+}
+
+*,
+*:active,
+*:focus {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* img {
+    width: 100%;
+    height: auto;
+    display: block;
+} */
+
 .App {
   text-align: center;
 }
@@ -269,20 +311,7 @@ header h1 {
   /* position: absolute; */
 }
 
-                              /* Retreats: */
-.retreatsTextContent {
-  background-image: url("./images/mainTropical.jpg");
-  background-size: cover;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.retreatsTextContent > h3 {
-  color: white;
-}
-
-                              /* Locations: */
+                                          /* Locations: */
 .locationsReviews {
   background-image: url("./images/mainTropical.jpg");
   background-size: cover;
@@ -335,15 +364,14 @@ header h1 {
   justify-content: space-around;
 }
 
-                                     /* Reviews: */
+                                      /* Reviews: */
 .smallHeaders {
   font-family: 'Pacifico', cursive;
   letter-spacing: 2px;
   color: white;
   text-shadow: 3px 3px black;
-
 }
-                                     /* Form: */
+                                      /* Form: */
 .submitBtnStyle {
   width: 8vw;
   height: 4vh;
@@ -422,7 +450,13 @@ header h1 {
   align-items: center;
 }
 
-                            /* Login: */
+                               /* Login: */
+.LoginRegister {
+  width: 70vw;
+  height: 60vh;
+  display: flex;
+}
+
 .loginRegisterBackground {
   display: flex;
   flex-direction: column;
@@ -462,27 +496,50 @@ header h1 {
   /* z-index: 10; */
 }
 
-                           /* Carousel: */
+                              /* Retreats: */
+.retreatsTextContent {
+  background-image: url("./images/mainTropical.jpg");
+  background-size: cover;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  /* position: relative;
+  z-index: -1; */
+}
+
+.retreatsTextContent > h3 {
+  color: white;
+  font-size: 3vh;
+}
+                              /* Carousel: */
 .carousel {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.carouselOpacity {
+.carouselWhiteDiv {
   width: 70vw;
   height: 60vh;
   background-color: white;
-  opacity: 0.8;
+  /* opacity: 0.8; */
   margin: 0 auto;
+  /* position: absolute;
+  z-index: -1;*/
 }
 
 .carousel img {
   align-items: center;
   width: 55vw;
   height: 50vh;
+  /* z-index: 100;
+  position: relative; */
 }
 
+.nextPrevBtn {
+  width: 6vw;
+  height: 3vh;
+}
 
                           /* Animation for Main page */
 /* .animation {

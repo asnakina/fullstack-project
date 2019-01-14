@@ -25,12 +25,16 @@ function NavBar(props) {
       <li>
         <Link to='/exercises'>Exercises</Link>
       </li>
-      <li>
-        <Link to='/auth'>Log In / Register</Link>
-      </li>
-      <li>
-        <Link to='/profile'>Profile</Link>
-      </li>
+      {Object.keys(props.loggedInUser).length
+        ?
+        <li>
+          <Link to='/profile'>Profile</Link>
+        </li>
+        :
+        <li>
+          <Link to='/auth'>Log In / Register</Link>
+        </li>
+      }
       <li id="gifLi">
        <img src={ require('../images/pose4.gif') } alt={'main'} />
       </li>

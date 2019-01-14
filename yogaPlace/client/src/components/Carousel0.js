@@ -6,9 +6,9 @@ class Carousel extends Component {
     super(props)
     this.state = {
       imgUrls: [
-        require('../images/1slide.jpg'),
-        require('../images/2slide.jpg'),
-        require('../images/3slide.jpg')
+        require('../images/retreat1.jpg'),
+        require('../images/retreat2.jpg'),
+        require('../images/retreat3.jpg')
         // "https://www.justrunlah.com/wp-content/uploads/2015/11/yoga-1.jpg",
         // "http://fivesisters.co/wp-content/uploads/2018/04/istock-499609170.jpg"
       ],
@@ -112,3 +112,35 @@ class Carousel extends Component {
 }
 
 export default Carousel;
+
+// Bootstrap
+// function Carousel(props) {
+//   return (
+// <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+//   <ol class="carousel-indicators">
+//     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+//     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+//     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+//   </ol>
+//   <div class="carousel-inner">
+//     <div class="carousel-item active">
+//       <img class="d-block w-100" src="../images/1slide.jpg" alt="First slide">
+//     </div>
+//     <div class="carousel-item">
+//       <img class="d-block w-100" src="../images/2slide.jpg" alt="Second slide">
+//     </div>
+//     <div class="carousel-item">
+//       <img class="d-block w-100" src="../images/3slide.jpg" alt="Third slide">
+//     </div>
+//   </div>
+//   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+//     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+//     <span class="sr-only">Previous</span>
+//   </a>
+//   <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+//     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+//     <span class="sr-only">Next</span>
+//   </a>
+// </div>
+// )}
+// export default Carousel;
