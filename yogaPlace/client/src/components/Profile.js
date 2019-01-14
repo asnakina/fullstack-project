@@ -37,7 +37,7 @@ class Profile extends Component {
       return (<Redirect to="/auth" />)
     }
     return (
-      <div>
+      <div className="classesLocations">
         <h2>Hello User!</h2>
         <button onClick={this.logOut}>Log Out</button>
         <ul>

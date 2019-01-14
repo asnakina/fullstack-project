@@ -401,15 +401,50 @@ header h1 {
   font-style: italic;
 }
 
-.LocationsClassesRendering {
-
-}
-
 #locationsSpan {
   margin: 0 auto;
   align-items: center;
 }
 
+                            /* Login: */
+.loginRegisterBackground {
+  display: flex;
+  flex-direction: column;
+  background-image: url("./images/mainTropical.jpg");
+  background-size: cover;
+  height: 90vh;
+}
+
+.loginFormOpacity {
+  width: 30vw;
+  height: 37vh;
+  background-color: white;
+  opacity: 0.8;
+  margin: 0 auto;
+}
+
+.loginFormOpacity > h3 {
+  margin-top: 2vh;
+  font-size: 3vh;
+}
+
+.loginInputs {
+  height: 5vh;
+  width: 20vw;
+  font-size: 3vh;
+  font-weight: 500;
+  margin: 2vh 0;
+}
+
+.loginBtn {
+  height: 4vh;
+  width: 10vw;
+  font-size: 3vh;
+  font-weight: 500;
+  margin: 2vh 0;
+  border-radius: 15px;
+  /* z-index: 10; */
+}
 
                            /* Carousel: */
 .carousel {

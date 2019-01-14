@@ -2,20 +2,22 @@ import React from 'react';
 
 function LoginForm(props) {
   return (
-    <form onSubmit={props.handleLogin} className="loginForm">
-        <h2>Login</h2>
+    <form onSubmit={props.handleLogin} className="loginRegisterBackground">
+        <h2 className="mediumHeader">Login</h2>
         <div className="loginFormOpacity">
            <h3>Email:</h3>
            <input onChange={props.handleChange}
                   name="email"
-                  value={props.login.email} />
+                  value={props.login.email}
+                  className="loginInputs" />
            <br></br>
            <h3>Password:</h3>
            <input onChange={props.handleChange}
                   name="password"
-                  value={props.login.password} />
+                  value={props.login.password}
+                  className="loginInputs" />
            <br></br>
-           <button type="submit">Login</button>
+           <button type="submit" className="loginBtn">Login</button>
         </div>
     </form>
   )
