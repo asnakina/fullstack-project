@@ -10,12 +10,10 @@ import axios from 'axios';
  }
 
  async function registerServices(credentials) {
-  const token = await axios.post('api/user_register',
+  const token = await axios.post('api/users',
   {
-    "auth": credentials
+    "user": credentials
   });
-  console.log(token.data);
-  return token.data
  }
 
  export {

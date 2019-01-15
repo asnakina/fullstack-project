@@ -26,8 +26,7 @@ class AuthForm extends Component {
     this.handleChangeRegister = this.handleChangeRegister.bind(this);
   }
 
-  async handleLogin(e) {
-    e.preventDefault();
+  async handleLogin() {
     const tokenData = await login(this.state.credentials.login)
     console.log(tokenData);
     localStorage.setItem('token', tokenData.jwt);
@@ -38,14 +37,15 @@ class AuthForm extends Component {
 
   async handleRegister(e) {
     e.preventDefault();
-    await registerServices(this.state.credentials.registerServices)
+    await registerServices(this.state.credentials.register)
+    const userData = this.state.credentials.register
     this.setState(prevState => (
       {
         credentials: {
           //in a previous state of credentials add, spread operator makes shallow copy of the object (dynamic)
           //go through my form and see name matches and change the value
           ...prevState.credentials,
-          login: this.state.credentials.register
+          login: userData
           }
         }
     ))
@@ -79,7 +79,7 @@ class AuthForm extends Component {
           //in a previous state of credentials add, spread operator makes shallow copy of the object (dynamic)
           //go through my form and see name matches and change the value
           ...prevState.credentials,
-          Register: {
+          register: {
             ...prevState.credentials.register,
             [name] : value
           }

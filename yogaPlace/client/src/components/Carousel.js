@@ -10,7 +10,9 @@ class Carousel extends Component {
       imgUrls: [
         require('../images/retreat1.jpg'),
         require('../images/retreat2.jpg'),
-        require('../images/retreat3.jpg')
+        require('../images/retreat3.jpg'),
+        require('../images/retreat4.jpg'),
+        require('../images/retreat5.jpg')
       ]
      }
   }

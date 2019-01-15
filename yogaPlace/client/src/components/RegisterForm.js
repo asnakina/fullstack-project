@@ -12,7 +12,8 @@ function RegisterForm(props) {
                 className="loginInputs" />
          <br></br>
          <h3>Password:</h3>
-         <input onChange={props.handleChange}
+         <input type="password"
+                onChange={props.handleChange}
                 name="password"
                 value={props.register.register.password}
                 className="loginInputs" />

@@ -13,7 +13,7 @@ function AboutView(props) {
               You mind, body and soul will thank you for this!</li>
            </ul>
            <div className="videoStyle" loop autoplay>
-              <iframe width="728" height="410" src="https://www.youtube.com/embed/yrZLjh9DI_I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loop autoPlay></iframe>
+              <iframe width="708" height="350" src="https://www.youtube.com/embed/yrZLjh9DI_I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loop autoPlay></iframe>
            </div>
         </div>
         {/*<video loop autoPlay>
