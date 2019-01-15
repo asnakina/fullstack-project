@@ -38,9 +38,12 @@ class Profile extends Component {
       return (<Redirect to="/auth" />)
     }
     return (
-      <div className="classesLocations">
-        <h2>Hello User!</h2>
-        <button onClick={this.logOut}>Log Out</button>
+      <div>
+        <h2 className="mediumHeader">Profile</h2>
+        <h2 className="HelloUser">Hello User!</h2>
+        <button onClick={this.logOut} className="logOutBtn">Log Out</button>
+        <div className="profileDiv">
+        <p>User, you got 20% off for your next purchase! Stay fit and calm!</p>
         <ul>
            <li>
             {this.state.reviews.map(theReview => (
@@ -60,6 +63,7 @@ class Profile extends Component {
            </li>
          </ul>
       </div>
+    </div>
     )
   }
 }

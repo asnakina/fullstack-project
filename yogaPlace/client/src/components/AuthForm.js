@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import decode from 'jwt-decode'; //package to decode a token for id-s
 //we import login for ...
 import { login } from '../services/auth';
+import { registerServices } from '../services/auth';
 import { Redirect } from 'react-router-dom';
 import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
@@ -10,19 +11,24 @@ class AuthForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      credentials: {
+      credentials: {login:{
         email: '',
         password: ''
-      },
+      }, register:{
+        email: '',
+        password: ''
+      }},
       redirectToProfile: false
     }
     this.handleLogin = this.handleLogin.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleRegister = this.handleRegister.bind(this);
+    this.handleChangeLogin = this.handleChangeLogin.bind(this);
+    this.handleChangeRegister = this.handleChangeRegister.bind(this);
   }
 
   async handleLogin(e) {
     e.preventDefault();
-    const tokenData = await login(this.state.credentials)
+    const tokenData = await login(this.state.credentials.login)
     console.log(tokenData);
     localStorage.setItem('token', tokenData.jwt);
     this.setState({ redirectToProfile: true });
@@ -30,7 +36,23 @@ class AuthForm extends Component {
     this.props.setLoggedInUser(decodedToken)
   }
 
-  handleChange(e) {
+  async handleRegister(e) {
+    e.preventDefault();
+    await registerServices(this.state.credentials.registerServices)
+    this.setState(prevState => (
+      {
+        credentials: {
+          //in a previous state of credentials add, spread operator makes shallow copy of the object (dynamic)
+          //go through my form and see name matches and change the value
+          ...prevState.credentials,
+          login: this.state.credentials.register
+          }
+        }
+    ))
+    this.handleLogin();
+  }
+
+  handleChangeLogin(e) {
   //name is email or password
    const {name, value} = e.target
     this.setState(prevState => (
@@ -39,7 +61,28 @@ class AuthForm extends Component {
           //in a previous state of credentials add, spread operator makes shallow copy of the object (dynamic)
           //go through my form and see name matches and change the value
           ...prevState.credentials,
-          [name] : value
+          login: {
+            ...prevState.credentials.login,
+            [name] : value
+          }
+        }
+      }
+    ))
+  }
+
+  handleChangeRegister(e) {
+  //name is email or password
+   const {name, value} = e.target
+    this.setState(prevState => (
+      {
+        credentials: {
+          //in a previous state of credentials add, spread operator makes shallow copy of the object (dynamic)
+          //go through my form and see name matches and change the value
+          ...prevState.credentials,
+          Register: {
+            ...prevState.credentials.register,
+            [name] : value
+          }
         }
       }
     ))
@@ -49,12 +92,12 @@ class AuthForm extends Component {
     if (this.state.redirectToProfile) return (<Redirect to="/profile" />)
     return (
       <div className="LoginRegister">
-       <LoginForm handleChange={this.handleChange}
+       <LoginForm handleChange={this.handleChangeLogin}
                   handleLogin = {this.handleLogin}
                   login={this.state.credentials} />
-       <RegisterForm handleChange={this.handleChange}
+       <RegisterForm handleChange={this.handleChangeRegister}
                      register={this.state.credentials}
-                     />
+                     handleRegister = {this.handleRegister} />
       </div>
     )
   }

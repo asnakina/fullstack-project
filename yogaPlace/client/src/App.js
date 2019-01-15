@@ -113,9 +113,9 @@ componentDidMount() {
               <Route exact path="/the_classes" component={ClassesView} />
               {/*we can give "component" or "render"*/}
               <Route path="/profile"
-              render={((props) => <Profile
-                {...props}
-                removeLoggedInUser={this.removeLoggedInUser}
+                render={((props) => <Profile
+                 {...props}
+                 removeLoggedInUser={this.removeLoggedInUser}
               />)}/>
               <Route path="/auth"
                 render={((props) => <AuthForm
