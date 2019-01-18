@@ -16,6 +16,7 @@ Deployed site: https://gentle-journey-33212.herokuapp.com/
 - a slideshow with understandable React JavaScript code 
 - animations 
 - excellent design
+- gifs, video, audio, slide-show
 
 ![Another page](/printscreens/printscreen2.jpg)
 
