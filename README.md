@@ -3,23 +3,26 @@ The goal is to build the app that has a JSON API back-end and a React front end.
 The app will have at least 2 related models and all 4 CRUD operations for the whole project. 
 Between each model all CRUD operations will be present.
 
+Deployed site: https://gentle-journey-33212.herokuapp.com/
+
 ![Main page](/printscreens/printscreen1.jpg)
+
+![Main page](/printscreens/printscreen4.jpg)
+
+## M.V.P
+- Navigation Bar contains Main, About, Login/Register, Schedule, Retreats, Exercises, etc. 
+- Create all routs, associations, seed file, models file. 
+- CRUD (i.e. ability to set up reviews)
+- a slideshow with understandable React JavaScript code 
+- animations 
+- excellent design
 
 ![Another page](/printscreens/printscreen2.jpg)
 
 ![Different page](/printscreens/printscreen3.jpg)
 
-## M.V.P
-- Navigation Bar contains Home, Maps, Login/Register, etc. 
-- Create all routs, associations, seed file, models file. 
-- CRUD (i.e. ability to set up your favourite classes or add a pass to user's basket for further paying options)
-- a slideshow with understandable React JavaScript code 
-- animations 
-- excellent design
-
-![Associations M.V.P.](/printscreens/printscreen4.jpg)
-
 ## Post M.V.P features
+- CRUD (i.e. ability to add your favourite classes into you profile and print or delete your schedule)
 - access to Google Maps
 - account_type: string. Setting "account_type" to "admin" or "teacher" or "student"
 we can change the view depending on what the account type is.
