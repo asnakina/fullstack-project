@@ -45,7 +45,6 @@ function NavBar(props) {
 export default NavBar;
 
                         // Another way of codding the Navbar:
-// import { Link } from 'react-router-dom';
 // import MainView from './MainView';
 // import AboutView from './AboutView';
 // import LocationsView from './LocationsView';
