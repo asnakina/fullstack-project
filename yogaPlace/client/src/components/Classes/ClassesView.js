@@ -35,30 +35,12 @@ export default class ClassesView extends Component {
 //Get
   async getLocations() {
     try {
-      const locations = await getAllLocations();
+       const locations = await getAllLocations();
        this.setState({locations});
     } catch(e) {
       console.error(e);
     }
   }
-
-//AddFavoriteClass
-   // async addFavClass() {
-   //   try {
-   //     const
-   //   }
-   // }
-
-  // async handleSubmit(location_id, class_id) {
-  //    console.log(this.state.location);
-  //    console.log(this.state.class);
-  //    const token = localStorage.getItem('token');
-  //    if(this.state.favourClasses) {
-  //      const favor = await AddFavoriteClass(token, {location_id });
-  //     }
-  //    }
-
-//UnfavoriteClass
 
 //for save access of the data in Location. to fill out yet.
  checkClasses = (theLocation) =>{
