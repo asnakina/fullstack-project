@@ -90,7 +90,7 @@ componentDidMount() {
            <div className="navBar">
              <NavBar loggedInUser={this.state.loggedInUser}/>
            </div>
-         <div className="headerContent">
+           <div className="headerContent">
             <header>
               <h1>Yoga Place</h1>
               <audio ref="audio" src={require('./images/Samba.mp3')} controls autoPlay loop>

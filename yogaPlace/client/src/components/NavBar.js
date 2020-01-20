@@ -14,7 +14,7 @@ function NavBar(props) {
         <Link to='/about'>About</Link>
       </li>
       <li>
-        <Link to='/locations'>Locations/Reviews</Link>
+        <Link to='/locations'>Locations/ Reviews</Link>
       </li>
       <li>
         <Link to='/the_classes'>Schedule</Link>
@@ -32,7 +32,7 @@ function NavBar(props) {
         </li>
         :
         <li>
-          <Link to='/auth'>Log In / Register</Link>
+          <Link to='/auth'>Log In/ Register</Link>
         </li>
       }
       <li id="gifLi">

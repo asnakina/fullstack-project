@@ -1,6 +1,5 @@
                                 /* Fonts for the app: */
   /* font-family: 'Pacifico', cursive; */
-
 *{
   margin: 0;
   padding: 0;
@@ -55,9 +54,8 @@ body {
 }
 
 audio {
-  float: right;
-  margin-top: -9vh;
-  margin-right: 3vh;
+    height: 45px;
+    margin-top: 10px;
 }
                              /* NavBar: */
 .navBarContent {
@@ -123,8 +121,6 @@ audio {
   width: 83vw;
   background-image: url("./images/mainTropical.jpg");
   background-size: cover;
-  height: 89vh;
-  /* height: 100vh; */
 }
 
 header {
@@ -138,7 +134,7 @@ header {
 }
 
 header h1 {
-  /* margin-top: -2vh; */
+  margin-top: -3vh;
   color: #01a3a4;
   animation: breathingOne 5s ease-in-out infinite;
 }
@@ -175,7 +171,7 @@ header h1 {
 .mainClass {
   background-image: url("./images/mainTropical.jpg");
   background-size: cover;
-  height: 89vh;
+  /* height: 89vh; */
   text-align: center;
 }
 
@@ -278,15 +274,13 @@ header h1 {
 
 .gifs {
   background-color: white;
-  height: 80vh;
-  width: 75vw;
   position: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 auto;
-  /* position: relative; */
-  /* opacity: 0.8; */
+  height: auto;
+  width: 100%;
 }
 
 .gifs > img {
@@ -443,7 +437,6 @@ header h1 {
                                /* Login: */
 .LoginRegister {
   width: 70vw;
-  height: 60vh;
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
@@ -545,6 +538,7 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  object-fit: contain;
 }
 
 .carouselWhiteDiv {
@@ -594,22 +588,36 @@ header h1 {
     margin-top: 10vh;
   }
 
+  .submitBtnStyle {
+    width: 70%;
+  }
+
+  .nextPrevBtn {
+    width: 100%;
+    font-size: 2vh;
+  }
+
+  .carousel img {
+    object-fit: contain;
+}
+
+.carouselWhiteDiv {
+  width: auto;
+}
+
+.loginBtn {
+  width: 80%;
+}
+
 }
 
 @media (max-width: 576px) {
-
-  audio {
-    width: 200px;
-    height: 35px;
-    margin-top: 48px;
-  }
-
   .breathingLines {
     font-size: 3vh;
   }
 
   .navBar > li {
-    font-size: 20px;
+    font-size: 12px;
   }
 
   .navBar > li img {
@@ -618,6 +626,7 @@ header h1 {
 
   header h1 {
     font-size: 5vh;
+    margin-top: 0;
   }
   
   .videoStyle > iframe {
@@ -638,6 +647,68 @@ header h1 {
 
   .examplesofPasswords {
     margin-top: 7vh;
+  }
+
+  .submitBtnStyle {
+    width: 100%;
+  }
+
+  .LocationsReviewsSubmit {
+    flex-wrap: wrap;
+    font-size: 0.5rem;
+  }
+
+  .LocationsRendering {
+    width: 100%;
+  }
+
+  .carousel img {
+    width: 55vw;
+    height: 35vh;
+    object-fit: contain;
+  }
+
+  .nextPrevBtn {
+    display: none;
+  }
+
+  .carouselWhiteDiv {
+    height: 25vh;
+  }
+
+  .gifs > img {
+    width: 100%;
+    height: auto;
+  }
+
+  .LoginRegister {
+    flex-wrap: wrap;
+  }
+
+  .loginFormOpacity {
+    width: 80%;
+    height: auto;
+  }
+
+  .loginBtn {
+    height: 5vh;
+    width: 80%;
+  }
+
+  .examplesofPasswords {
+    width: 90%;
+  }
+
+  audio {
+    height: 25px;
+  }
+
+  #reviewsText {
+    margin-left: 30vw;
+  }
+
+  #exercisesText {
+    margin-left: 30vw;
   }
 
 }
